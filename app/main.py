@@ -8,7 +8,7 @@ settings = Settings()
 def get_app() -> FastAPI:
     """Create a FastAPI app with the specified settings."""
 
-    app = FastAPI(**settings.FASTAPI_PROPERTIES)
+    app = FastAPI(**settings.fastapi_kwargs)
 
     app.include_router(router)
 

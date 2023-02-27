@@ -4,7 +4,7 @@
 </p> -->
 
 <h2 align="center">Simple Site</h2>
-<h4 align="center">Featuring htmx and TailwindCSS</h4>
+<h3 align="center">Featuring htmx and TailwindCSS</h3>
 
 <div align="center">
 
@@ -29,7 +29,6 @@
   - [Prerequisites](#prerequisites)
   - [Installing](#installing)
 - [🔧 Running the tests ](#-running-the-tests-)
-  - [Break down into end to end tests](#break-down-into-end-to-end-tests)
 - [🎈 Usage ](#-usage-)
 - [🚀 Deployment ](#-deployment-)
 - [⛏️ Built Using ](#️-built-using-)
@@ -42,32 +41,57 @@ Build a beautiful web application using nothing more than Python, htmx, and Tail
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+This repository was prepared as part of a workshop on how to create a python-backed front end, featuring Jinja templates for HTML rendering, TailwindCSS for style, and htmx for pizzazz! 😎
+
+The main branch contains the "starter" app, which lacks all of the features. It only contains a basic FastAPI "Hello, World!" application. Each subsequent branch contains more features. If you want the fully-featured application, switch to the appropriate branch and select "Use This Template" (make sure to only clone the "current" branch).
 
 ### Prerequisites
 
-- Coming Soon
+Your only requirement is to have **Python 3.11** (or later) installed locally. The rest of the dependencies are in the `pyproject.toml` file, as well as the `requirements.txt` file.
+
+> Why both? If you use a package manager (i.e., I use `pdm`), you can use your package manager to install dependencies from the `pyproject.toml`. Otherwise, you can go the more traditional route using the `requirements.txt` file.
 
 ### Installing
 
-- Coming Soon
+If you have a package manager, you can use that to install directly from the `pyproject.toml` file. Otherwise, you can go the traditional rout (see below).
+
+After cloning the repo locally, you will need to create a virtual environment. Navigate to the location where you have cloned the project and run the following command:
+
+```
+python -m venv .venv
+```
+
+This will create a `.venv` directory within your project.
+
+Next, activate your environment:
+
+```
+# On Windows
+.\.venv\Scripts\activate
+
+# On MacOS/Linux
+$ source myvenv/bin/activate
+```
+
+Then, install the requirements:
+```
+python -m pip install -r requirements.txt
+```
+
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
-Use pytest to run
-
-### Break down into end to end tests
-
-After activating your virtual environment, run tests by running `pytest` on the command line.
+After activating your virtual environment, you can run tests by typing `pytest` on the command line.
 
 ```
 pytest
 ```
 
+If everything has gone well so far, all tests should pass.
 
 ## 🎈 Usage <a name="usage"></a>
 
-- Coming Soon
+This repo was created primarily to aid in a workshop setting, so your mileage may vary. Feel free to clone the repo and make it your own. But most of all, have fun! 🥳
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
@@ -75,6 +99,7 @@ pytest
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
+- FastAPI
 - Jinja2
 - TailwindCSS
 - HTMX
@@ -82,7 +107,7 @@ pytest
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@tataraba](https://github.com/tataraba) - Idea & Initial work
+- [@tataraba](https://github.com/tataraba) - Mario Munoz, _Python By Night_
 
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>

@@ -3,3 +3,4 @@ uvicorn==0.20.0
 pytest==7.2.1
 httpx==0.23.3
 Jinja2==3.1.2
+pytailwindcss==0.1.4

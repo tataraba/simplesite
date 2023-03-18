@@ -127,6 +127,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "pytailwindcss"
+version = "0.1.4"
+requires_python = ">=3.8,<4.0"
+summary = "Standalone Tailwind CSS CLI, installable via pip. Use Tailwind CSS without Node.js."
+
+[[package]]
 name = "pytest"
 version = "7.2.1"
 requires_python = ">=3.7"
@@ -187,7 +193,7 @@ dependencies = [
 
 [metadata]
 lock_version = "4.1"
-content_hash = "sha256:52885ec3902700da66201ca5f16071fbb8ff5883e1da387f3b3cd89eb7e98451"
+content_hash = "sha256:618a494be74af6eda8f407ccc9da853e023c5560001c975c8613116af9ad75a9"
 
 [metadata.files]
 "anyio 3.6.2" = [
@@ -335,6 +341,10 @@ content_hash = "sha256:52885ec3902700da66201ca5f16071fbb8ff5883e1da387f3b3cd89eb
     {url = "https://files.pythonhosted.org/packages/f0/64/1c98e2a96f70cc651253713bb464a604f7f5dd575a0bcc07e7434a2b3347/pydantic-1.10.5-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:3257bd714de9db2102b742570a56bf7978e90441193acac109b1f500290f5718"},
     {url = "https://files.pythonhosted.org/packages/f4/cb/7299ad5462f30555c9573a7b406d762841f1296b4ffecb800264ff6b5200/pydantic-1.10.5-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:72ef3783be8cbdef6bca034606a5de3862be6b72415dc5cb1fb8ddbac110049a"},
     {url = "https://files.pythonhosted.org/packages/ff/11/9db43f7cd6fe4f22170b282f9742b2d3b645d7d84cecc5221b4d7c50af44/pydantic-1.10.5-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:36e44a4de37b8aecffa81c081dbfe42c4d2bf9f6dff34d03dce157ec65eb0f15"},
+]
+"pytailwindcss 0.1.4" = [
+    {url = "https://files.pythonhosted.org/packages/f8/ca/7e9f22d92d0943ace6c42ba09e3f00ffc268a2440a289cb62e4ca40e5668/pytailwindcss-0.1.4-py3-none-any.whl", hash = "sha256:fa78a3abd650d48dade10d0282df71e2f2757934595f8470f0d0c2ce175f5a15"},
+    {url = "https://files.pythonhosted.org/packages/fc/0f/7457ea5bada7285638b63e321f4e4b2270edd92722f00ffb335fbde24fc4/pytailwindcss-0.1.4.tar.gz", hash = "sha256:2376fe551674a00f38cbdf134fc6d1dc87bf43bb396c5d4ce183c7d63153c39f"},
 ]
 "pytest 7.2.1" = [
     {url = "https://files.pythonhosted.org/packages/cc/02/8f59bf194c9a1ceac6330850715e9ec11e21e2408a30a596c65d54cf4d2a/pytest-7.2.1-py3-none-any.whl", hash = "sha256:c7c6ca206e93355074ae32f7403e8ea12163b1163c976fee7d4d84027c162be5"},

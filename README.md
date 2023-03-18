@@ -34,6 +34,7 @@
 - [⛏️ Built Using ](#️-built-using-)
 - [✍️ Authors ](#️-authors-)
 - [🎉 Acknowledgements ](#-acknowledgements-)
+- [Chapter 2](#chapter-2)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -113,3 +114,31 @@ This repo was created primarily to aid in a workshop setting, so your mileage ma
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 - Coming soon
+
+
+## Chapter 2
+
+- `pip install tailwindcss`
+- Gives you the `tailwindcss` command in your terminal
+- Navigate to project root and type `tailwindcss`
+  - should confirm that binary is being downloaded
+  - then the help menu should be available
+- Type `tailwindcss init`
+  - this creates a `tailwind.config.js` file
+  - This is where you tell tailwind where to look for your html files
+  - can be a regex pointing to your template directory and file type
+- Next, need to create/edit file with tailwind directives
+  - typically in a 'src' directory used for compilation
+  - create `app/static/src/tw.css` and add:
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+- Then, run CLI command to scan template folder (defined in tailwind.config.js)
+  - `tailwindcss -i ./src/tw.css -o ./dist/main.css --watch`
+  - This compiles from tw.css into main.css (will overwrite what was there)
+  - Use the `--watch` argument for a watcher that compiles on save
+  - Use the `--minify` argument when compiling to production
+- Tailwind extension in your code editor will make life easier
+  - Otherwise, have the tailwindcss website open

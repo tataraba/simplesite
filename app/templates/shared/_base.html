@@ -6,32 +6,29 @@
   <title>{{ page_title }}</title>
   <meta name="description" content="{{ page_description }}"/>
 
-  <!-- Facebok Open Graph: https://developers.facebook.com/docs/sharing/opengraph -->
+  <!-- OPTIONAL: Facebook Open Graph: https://developers.facebook.com/docs/sharing/opengraph -->
   <meta property="og:site_name" content="{{ site_name }}"/>
   <meta property="og:type" content="Simple site featuring tailwind and htmx..."/>
   <meta property="og:title" content="{{ page_title }}"/>
   <meta property="og:description"  content="{{ page_description }}"/>
   <meta property="og:url" content="https://wwww.example.com"/>
 
-  <!-- Favicon! -->
+  <!-- OPTIONAL: Favicon! -->
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', path='favicon/apple-touch-icon.png') }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', path='favicon/favicon-32x32.png') }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', path='favicon/favicon-16x16.png') }}">
-  <link rel="manifest" href="/site.webmanifest">
+  <link rel="manifest" href="{{ url_for('static', path='favicon/site.webmanifest') }}">
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ url_for('static', path='css/main.css') }}" type="text/css" />
 </head>
 
-<body class="bg-slate-900 text-slate-50">
+<body class="bg-slate-900">
     {% block header %}
     {% include "/shared/_header.html" %}
     {% endblock %}
 
     {% block content %}
-    {% endblock %}
-
-    {% block sidebar %}
     {% endblock %}
 
     {% block footer %}

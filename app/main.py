@@ -1,3 +1,6 @@
+import logging
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
@@ -5,11 +8,21 @@ from app.config import Settings
 from app.routes import router
 
 settings = Settings()
+logger = logging.getLogger(__name__)
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+
+    print("Starting FastAPI...")
+    yield
+    print("closing")
 
 def get_app() -> FastAPI:
     """Create a FastAPI app with the specified settings."""
 
-    app = FastAPI(**settings.fastapi_kwargs)
+
+
+    app = FastAPI(lifespan=lifespan, **settings.fastapi_kwargs)
 
     app.mount("/static", StaticFiles(directory=settings.STATIC_DIR), name="static")
 

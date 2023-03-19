@@ -8,7 +8,7 @@ authors = [
     {name = "Mario Munoz", email = "pythonbynight@gmail.com"},
 ]
 dependencies = [
-    "fastapi>=0.92.0",
+    "fastapi>=0.95.0",
     "uvicorn>=0.20.0",
     "httpx>=0.23.3",
     "pytest>=7.2.1",

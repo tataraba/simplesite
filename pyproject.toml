@@ -9,7 +9,7 @@ authors = [
 ]
 dependencies = [
     "fastapi>=0.95.0",
-    "uvicorn>=0.20.0",
+    "uvicorn[standard]>=0.21.1",
     "httpx>=0.23.3",
     "pytest>=7.2.1",
     "Jinja2>=3.1.2",
@@ -17,3 +17,19 @@ dependencies = [
 ]
 requires-python = ">=3.11"
 license = {text = "MIT"}
+
+
+# OPTIONAL: Only if using Ruff for linting
+[tool.ruff]
+# Enable flake8-bugbear (`B`) rules.
+select = ["B", "E", "F", "Q", "W"]
+
+src = ["app", "tests"]
+line-length = 88
+target-version = "py311"
+
+# Never enforce `E501` (line length violations).
+ignore = ["E501"]
+
+# Disable autofix for unused imports
+unfixable = ["F401"]

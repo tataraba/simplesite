@@ -649,9 +649,9 @@ video {
   border-bottom-color: rgb(161 161 170 / var(--tw-border-opacity));
 }
 
-.bg-cyan-600 {
+.bg-cyan-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(8 145 178 / var(--tw-bg-opacity));
+  background-color: rgb(6 182 212 / var(--tw-bg-opacity));
 }
 
 .bg-slate-300 {

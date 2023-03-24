@@ -34,8 +34,7 @@
 - [⛏️ Built Using ](#️-built-using-)
 - [✍️ Authors ](#️-authors-)
 - [🎉 Acknowledgements ](#-acknowledgements-)
-- [Chapter 2](#chapter-2)
-  - [Extra](#extra)
+- [Chapter 3](#chapter-3)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -117,35 +116,7 @@ This repo was created primarily to aid in a workshop setting, so your mileage ma
 - Coming soon
 
 
-## Chapter 2
+## Chapter 3
 
-- `pip install tailwindcss`
-- Gives you the `tailwindcss` command in your terminal
-- Navigate to project root and type `tailwindcss`
-  - should confirm that binary is being downloaded
-  - then the help menu should be available
-- Type `tailwindcss init`
-  - this creates a `tailwind.config.js` file
-  - This is where you tell tailwind where to look for your html files
-  - can be a regex pointing to your template directory and file type
-- Next, need to create/edit file with tailwind directives
-  - typically in a 'src' directory used for compilation
-  - create `app/static/src/tw.css` and add:
-```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-- Then, run CLI command to scan template folder (defined in tailwind.config.js)
-  - `tailwindcss -i ./src/tw.css -o ./dist/main.css --watch`
-  - This compiles from tw.css into main.css (will overwrite what was there)
-  - Use the `--watch` argument for a watcher that compiles on save
-  - Use the `--minify` argument when compiling to production
-- Tailwind extension in your code editor will make life easier
-  - Otherwise, have the tailwindcss website open
-
-### Extra
-- Can use the `subprocess.run` command to run command on app startup
-  - will force tailwind compilation on app startup in case you forget
-- When starting app with uvicorn, can use the `--reload-include *.html` to watch changes in templates directory
-  - slower compiler than having a separate process, but won't have to remember to start tailwind process
+- `python -m pip install tinydb`
+-

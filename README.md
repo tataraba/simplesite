@@ -35,6 +35,7 @@
 - [✍️ Authors ](#️-authors-)
 - [🎉 Acknowledgements ](#-acknowledgements-)
 - [Chapter 2](#chapter-2)
+  - [Extra](#extra)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -142,3 +143,9 @@ This repo was created primarily to aid in a workshop setting, so your mileage ma
   - Use the `--minify` argument when compiling to production
 - Tailwind extension in your code editor will make life easier
   - Otherwise, have the tailwindcss website open
+
+### Extra
+- Can use the `subprocess.run` command to run command on app startup
+  - will force tailwind compilation on app startup in case you forget
+- When starting app with uvicorn, can use the `--reload-include *.html` to watch changes in templates directory
+  - slower compiler than having a separate process, but won't have to remember to start tailwind process

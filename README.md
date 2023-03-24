@@ -119,4 +119,5 @@ This repo was created primarily to aid in a workshop setting, so your mileage ma
 ## Chapter 3
 
 - `python -m pip install tinydb`
+- add the `DATA_DIR` to config file and load data from github
 -

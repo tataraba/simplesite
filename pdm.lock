@@ -194,6 +194,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "tinydb"
+version = "4.7.1"
+requires_python = ">=3.7,<4.0"
+summary = "TinyDB is a tiny, document oriented database optimized for your happiness :)"
+
+[[package]]
 name = "typing-extensions"
 version = "4.5.0"
 requires_python = ">=3.7"
@@ -249,7 +255,7 @@ summary = "An implementation of the WebSocket Protocol (RFC 6455 & 7692)"
 
 [metadata]
 lock_version = "4.1"
-content_hash = "sha256:f377328ca39c04396591e5d6a6b142c3a0d2951f65fa49aa800f95edb4e84a80"
+content_hash = "sha256:0940cb96efccf649c729490cb00a2f133d41070d583a8b162ea4bccb40d64d95"
 
 [metadata.files]
 "anyio 3.6.2" = [
@@ -506,6 +512,10 @@ content_hash = "sha256:f377328ca39c04396591e5d6a6b142c3a0d2951f65fa49aa800f95edb
 "starlette 0.26.1" = [
     {url = "https://files.pythonhosted.org/packages/12/48/f9c1ec6bee313aba264fbc2483d9070f4e4526f2538e2b55b1e4a391d938/starlette-0.26.1-py3-none-any.whl", hash = "sha256:e87fce5d7cbdde34b76f0ac69013fd9d190d581d80681493016666e6f96c6d5e"},
     {url = "https://files.pythonhosted.org/packages/52/55/98746af96f57a0ff4f108c5ac84c130af3c4e291272acf446afc67d5d5d8/starlette-0.26.1.tar.gz", hash = "sha256:41da799057ea8620e4667a3e69a5b1923ebd32b1819c8fa75634bbe8d8bea9bd"},
+]
+"tinydb 4.7.1" = [
+    {url = "https://files.pythonhosted.org/packages/0a/a9/303de29f4b293b5948c8c73f9ef92480329a4d37f6ba168c76250ab4c6b3/tinydb-4.7.1-py3-none-any.whl", hash = "sha256:1534e498ca23f55c43b0f1e7c0cf174049498ab45a887c82ba9831e0f9868df3"},
+    {url = "https://files.pythonhosted.org/packages/32/ed/78f24df0fec08f0fb92fc4b4758adcab780660caa8c3f94c2e175eb7e2ba/tinydb-4.7.1.tar.gz", hash = "sha256:8955c239a79b8a6c8f637900152e2de38690848199d71d870c33c16405433ca5"},
 ]
 "typing-extensions 4.5.0" = [
     {url = "https://files.pythonhosted.org/packages/31/25/5abcd82372d3d4a3932e1fa8c3dbf9efac10cc7c0d16e78467460571b404/typing_extensions-4.5.0-py3-none-any.whl", hash = "sha256:fb33085c39dd998ac16d1431ebc293a8b3eedd00fd4a32de0ff79002c19511b4"},

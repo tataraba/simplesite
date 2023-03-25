@@ -120,4 +120,18 @@ This repo was created primarily to aid in a workshop setting, so your mileage ma
 
 - `python -m pip install tinydb`
 - add the `DATA_DIR` to config file and load data from github
--
+  - create `data` directory in project root
+  - add the `data.json` file obtained from github
+- create `crud.py`
+  - Basic helper class for `tinydb` operations
+    - very basic - only has a few methods for sake of demo
+  - use `CRUD` class to interface with the `data.json` file
+  - two tables within `data.json` - "artist_info" and "artist_details"
+  - instantiate a table (example)
+    - `db = CRUD().with_table("artist_info")`
+  - use class operations to access data (example)
+    - get all artist records - `artists = db.all_items()`
+    - search for an artist - `artist = db.search(key="artist", value="bandname")`
+  - Create methods within `routes.py` to access db data
+    - send to template through the template context
+  - Practice sending data to templates from db

@@ -3,8 +3,19 @@
 {% block content %}
     <section id="body" class="flex flex-col bg-slate-50 justify-center items-center max-w-screen-lg m-auto">
         <div class="flex flex-col justify-center items-center py-10">
-            <h2 class="text-2xl font-bold text-slate-800 uppercase">Main Page</h2>
-            <p>A glance at some of my favorite artists</p>
+            <h2 class="text-2xl leading-relaxed text-slate-800 uppercase">Welcome</h2>
+            <div id="main-info" class="flex flex-col px-24 py-6">
+                <p class="py-2">If this were the olden days, I'd have a CD Binder with a bunch of CDs and mismatched
+                    CD Sleeves. But thanks to this little web app, I can organize digitally, with a couple
+                    of tricks up my... ahem, ahem... sleeve.
+                </p>
+                <p class="py-2">I currently have {{artist_count}} artists saved.</p>
+                <p class="py-2 text-center"><a href="/" class="py-1 px-2 rounded-md bg-cyan-800 text-slate-50 hover:bg-cyan-500">Randomize!</a></p>
+            </div>
+            <div class="flex flex-col justify-center content-center text-center">
+                <img src="{{random_artist['cover_image']}}" />
+                <span class="py-4 uppercase font-bold">{{random_artist["name"]}}</span>
+            </div>
         </div>
     </section>
 {% endblock %}

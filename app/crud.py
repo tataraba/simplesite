@@ -1,4 +1,5 @@
 import re
+from random import randint
 
 from tinydb import Query, TinyDB
 
@@ -22,7 +23,6 @@ class CRUD:
         return self.db.all()
 
     def find(self, key: str, value: str):
-        print(key, value)
         q = getattr(self.query, key)
         if not self.table:
             return self.db.search(q == value)
@@ -34,6 +34,12 @@ class CRUD:
             return self.db.search(q.search(f"{value}+", flags=re.IGNORECASE))
         return self.table.search(q.search(f"{value}+", flags=re.IGNORECASE))
 
+    def get_random_item(self):
+        if not self.table:
+            num = randint(0, len(self.db))
+            return self.db.get(doc_id=num)
+        num = randint(0, len(self.table))
+        return self.table.get(doc_id=num)
 
 
     @property

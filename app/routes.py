@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Request
-from fastapi.templating import Jinja2Templates
+from jinja2_fragments.fastapi import Jinja2Blocks
 
 from app.config import Settings
 from app.crud import CRUD
 
 settings = Settings()
-templates = Jinja2Templates(directory=settings.TEMPLATE_DIR)
+templates = Jinja2Blocks(directory=settings.TEMPLATE_DIR)
 
 router = APIRouter()
 

@@ -106,6 +106,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "jinja2-fragments"
+version = "0.3.0"
+summary = "Render Jinja2 template block as HTML page fragments on Python web frameworks."
+dependencies = [
+    "jinja2>=3.1.0",
+]
+
+[[package]]
 name = "markupsafe"
 version = "2.1.2"
 requires_python = ">=3.7"
@@ -255,7 +263,7 @@ summary = "An implementation of the WebSocket Protocol (RFC 6455 & 7692)"
 
 [metadata]
 lock_version = "4.1"
-content_hash = "sha256:0940cb96efccf649c729490cb00a2f133d41070d583a8b162ea4bccb40d64d95"
+content_hash = "sha256:bf791127e8fc4ba380e2fd3e24c83c1e0801e50270d7ad3e4a78222398efe3aa"
 
 [metadata.files]
 "anyio 3.6.2" = [
@@ -348,6 +356,10 @@ content_hash = "sha256:0940cb96efccf649c729490cb00a2f133d41070d583a8b162ea4bccb4
 "jinja2 3.1.2" = [
     {url = "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz", hash = "sha256:31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"},
     {url = "https://files.pythonhosted.org/packages/bc/c3/f068337a370801f372f2f8f6bad74a5c140f6fda3d9de154052708dd3c65/Jinja2-3.1.2-py3-none-any.whl", hash = "sha256:6088930bfe239f0e6710546ab9c19c9ef35e29792895fed6e6e31a023a182a61"},
+]
+"jinja2-fragments 0.3.0" = [
+    {url = "https://files.pythonhosted.org/packages/12/0c/66c45e428d5929c3e101c75492bdd9f7d4dcf3a0524dbca37e5ee1862435/jinja2_fragments-0.3.0-py3-none-any.whl", hash = "sha256:0e93af60da2af334bfaa0fcc549e9d493bf466774c5f30b49ac085a1ffeaae3f"},
+    {url = "https://files.pythonhosted.org/packages/f1/54/00b5d04130ff2bd6e4dca20a8fa9f8328aa3b3ce0b506bb87cd221ffe19f/jinja2_fragments-0.3.0.tar.gz", hash = "sha256:4068b47239f0bc2ca71ee2a4d9521a225ae8e3d4bb84a9ca89bd26a608812163"},
 ]
 "markupsafe 2.1.2" = [
     {url = "https://files.pythonhosted.org/packages/02/2c/18d55e5df6a9ea33709d6c33e08cb2e07d39e20ad05d8c6fbf9c9bcafd54/MarkupSafe-2.1.2-cp310-cp310-win_amd64.whl", hash = "sha256:835fb5e38fd89328e9c81067fd642b3593c33e1e17e2fdbf77f5676abb14a156"},

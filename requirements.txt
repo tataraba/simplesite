@@ -76,6 +76,9 @@ iniconfig==2.0.0 \
 Jinja2==3.1.2 \
     --hash=sha256:31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852 \
     --hash=sha256:6088930bfe239f0e6710546ab9c19c9ef35e29792895fed6e6e31a023a182a61
+jinja2-fragments==0.3.0 \
+    --hash=sha256:0e93af60da2af334bfaa0fcc549e9d493bf466774c5f30b49ac085a1ffeaae3f \
+    --hash=sha256:4068b47239f0bc2ca71ee2a4d9521a225ae8e3d4bb84a9ca89bd26a608812163
 MarkupSafe==2.1.2 \
     --hash=sha256:0576fe974b40a400449768941d5d0858cc624e3249dfd1e0c33674e5c7ca7aed \
     --hash=sha256:085fd3201e7b12809f9e6e9bc1e5c96a368c8523fad5afb02afe3c051ae4afcc \

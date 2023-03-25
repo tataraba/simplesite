@@ -15,6 +15,7 @@ dependencies = [
     "Jinja2>=3.1.2",
     "pytailwindcss>=0.1.4",
     "tinydb>=4.7.1",
+    "jinja2-fragments>=0.3.0",
 ]
 requires-python = ">=3.11"
 license = {text = "MIT"}

@@ -124,4 +124,5 @@ This repo was created primarily to aid in a workshop setting, so your mileage ma
   - Download a copy (copy it into your project)
     - Use github version in `static/htmx/` directory
     - From [unpkg.com](https://unpkg.com/htmx.org/dist/htmx.min.js)
--
+- `python -m pip install jinja2-fragments`
+- Substitute `Jinja2Blocks` for `Jinja2Templates`

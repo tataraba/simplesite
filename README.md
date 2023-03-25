@@ -124,5 +124,24 @@ This repo was created primarily to aid in a workshop setting, so your mileage ma
   - Download a copy (copy it into your project)
     - Use github version in `static/htmx/` directory
     - From [unpkg.com](https://unpkg.com/htmx.org/dist/htmx.min.js)
+    - add `<script src="/path/to/htmx.min.js"></script>` within `<head>` element of html
 - `python -m pip install jinja2-fragments`
 - Substitute `Jinja2Blocks` for `Jinja2Templates`
+- HTMX - use "hx" tags within html attributes
+  - i.e., `<div hx-get="/about">` issues get request to `/about` when element is clicked
+- important attributes
+  - `hx-get` - issues `GET` request to given URL
+  - `hx-post` - issues `POST` request to given URL
+  - `hx-delete` - issues `DELETE` request to given URL
+  - `hx-trigger` - define behavior to send request
+    - i.e., `hx-trigger="mouseenter"` or `hx-trigger="keyup changed"`
+  - `hx-target` - where response will be loaded (looks for css selector id
+```
+  <input type="text" name="q"
+    hx-get="/trigger_delay"
+    hx-trigger="keyup delay:500ms changed"
+    hx-target="#search-results"
+    placeholder="Search..."
+>
+<div id="search-results"></div>
+```

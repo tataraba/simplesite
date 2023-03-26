@@ -6,9 +6,12 @@
                 <a class="px-3 py-1 mx-2 border-b-2 border-b-zinc-400 hover:text-white hover:border-b-2 hover:border-b-cyan-700 transition-all ease-in-out" href="/about">About</a>
                 <a class="px-3 py-1 mx-2 border-b-2 border-b-zinc-400 hover:text-white hover:border-b-2 hover:border-b-cyan-700 transition-all ease-in-out" href="/catalog">Catalog</a>
             </div>
-            <div id="search" class="relative">
-                <input type="text" placeholder="Search..." class="border w-60 py-1 pl-4 pr-10 rounded-3xl h-10 bg-slate-300 hover:bg-slate-800 hover:text-slate-300 focus:bg-slate-800 focus:text-slate-300 transition-all ease-in-out font-mono">
-                <div class="absolute right-1 top-1 h-8 w-8 bg-slate-700 rounded-full">
+            <div id="search" class="relative" hx-get="/search" hx-target="#content">
+                <input name="search" type="search" placeholder="Search..." class="border w-60 py-1 pl-4 pr-10 rounded-3xl h-10 bg-slate-300 hover:bg-slate-800 hover:text-slate-300 focus:bg-slate-800 focus:text-slate-300 transition-all ease-in-out font-mono"
+                       hx-post="/search"
+                       hx-trigger="keyup changed delay:500ms, search"
+                       hx-target="#search-results">
+                <div class="absolute right-1 top-1 h-8 w-8 bg-slate-700 rounded-full" hx-post="/search" hx-target="#search-results" hx-include="#search">
                     <svg class="pt-2 pl-2 stroke-slate-50 fill-slate-700 hover:stroke-cyan-500 transition-colors ease-in-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><g><circle cx="5.92" cy="5.92" r="5.42" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="13.5" y1="13.5" x2="9.75" y2="9.75" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
                 </div>
             </div>

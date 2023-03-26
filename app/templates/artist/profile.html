@@ -1,0 +1,10 @@
+<div id="profile-{{artist['id']}}" class="flex flex-col bg-slate-200 hover:bg-teal-100 transition-colors ease-in-out rounded-lg content-center text-center w-1/4 h-72 pb-2"
+                     hx-get="/catalog" hx-target="html">
+<span class="py-1 uppercase font-bold"><a href="{{get_website(artist)}}" class="text-cyan-800 hover:text-cyan-600">{{artist["name"]}}</a></span>
+<span class="px-1 text-xs text-slate-500 font-bold uppercase">Profile</span>
+<div class="flex flex-col my-2 h-full w-full overflow-y-auto overflow-x-clip">
+<p class="text-xs text-slate-600 h-full px-2 w-full">{{get_profile(artist)|safe}}</p>
+</div>
+<p class="text-xs uppercase text-slate-600"><a href="{{get_website(artist)}}">more info</a></p>
+
+</div>

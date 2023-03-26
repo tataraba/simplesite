@@ -1,0 +1,18 @@
+{% extends "/shared/_base.html" %}
+
+{% block content %}
+<section id="body" class="flex flex-col bg-slate-50 justify-center items-center max-w-screen-lg m-auto">
+    <div class="flex flex-col justify-center items-center py-10 min-w-full">
+        <h2 class="text-2xl leading-relaxed text-slate-800 uppercase">Search Results</h2>
+        <div id="search-results" class="flex flex-row flex-wrap justify-center content-center text-center w-full">
+            {% if search|list %}
+                {% for result in results %}
+                    <p>{{result["name"]}}</p>
+                {% endfor %}
+            {% else %}
+                <p>No results found.</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

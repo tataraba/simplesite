@@ -145,3 +145,6 @@ This repo was created primarily to aid in a workshop setting, so your mileage ma
 >
 <div id="search-results"></div>
 ```
+
+- will need to install python-multipart to receive form data (search)
+  - python -m pip install python-multipart

@@ -2,19 +2,22 @@
 
 {% block content %}
     <section id="body" class="flex flex-col bg-slate-50 justify-center items-center max-w-screen-lg m-auto">
-        <div class="flex flex-col justify-center items-center py-10">
+        <div class="flex flex-col justify-center items-center py-10 min-w-full">
             <h2 class="text-2xl leading-relaxed text-slate-800 uppercase">Catalog</h2>
             <div id="main-info" class="flex flex-col px-24 py-6">
                 <p class="py-2">Take a gander at some of my favorite artists...</p>
                 </p>
                 <p class="py-2">I currently have {{artists|length}} artists saved.</p>
             </div>
+            {% block artist_card %}
             <div class="flex flex-rown gap-2 flex-wrap justify-center content-center text-center w-full">
                 {% for artist in artists %}
-                <div class="flex flex-col bg-slate-200 hover:bg-teal-100 transition-colors ease-in-out rounded-lg content-center text-center w-1/4 h-72">
+                <div id="{{artist['id']}}" class="flex flex-col bg-slate-200 hover:bg-teal-100 transition-colors ease-in-out rounded-lg content-center text-center basis-1/4 w-full h-72"
+                     hx-get="/catalog"
+                     hx-swap="outerHTML">
                     <span class="py-1 uppercase font-bold"><a href="{{get_website(artist)}}" class="text-cyan-800 hover:text-cyan-600">{{artist["name"]}}</a></span>
                     <span class="px-1 text-xs text-slate-500 font-bold uppercase">Members</span>
-                    <div class="flex flex-col flex-wrap h-5/6 py-2">
+                    <div id="hello" class="flex flex-col flex-wrap h-5/6 py-2">
                     {% for member in get_members(artist) %}
                         <span class="px-1 text-sm text-slate-600">{{member}}</span>
                     {% endfor %}
@@ -22,6 +25,7 @@
                 </div>
                 {% endfor %}
             </div>
+            {% endblock %}
         </div>
     </section>
 {% endblock %}

@@ -30,6 +30,10 @@
   - [Rendering Templates in FastAPI](#rendering-templates-in-fastapi)
   - [Mounting Static Files](#mounting-static-files)
   - [Back to Templates](#back-to-templates)
+  - [Jinja Syntax and Context](#jinja-syntax-and-context)
+    - [Statements](#statements)
+    - [Expressions](#expressions)
+    - [The Context](#the-context)
   - [Run Your App](#run-your-app)
 - [✍️ Authors ](#️-authors-)
 - [🎉 Acknowledgements ](#-acknowledgements-)
@@ -59,17 +63,17 @@ Create two new directories within your `app`.
 - `static`
 - `templates`
 
-Starting with templates, you will want to create the foundation of your web applications html pages. You could create templates for each url endpoint (view), and each of these views would have access to Python objects passed from your application.
-
-> Note: If you're coming from Django or Flask, much of this will be familiar to you. Skip ahead if you're already comfortable with templating mechanics.
+Starting with templates, you will want to create the foundation of your web application's html pages. You could create templates for each url endpoint (view), and each of these views would have access to Python objects passed from your application.
 
 But Jinja templates allow you to nest pieces together, giving you a powerful mechanic that reduces the need to rewrite a lot of redundant html code.
 
 For example, it is likely that the `<head>` content between all your views would not change, with the exception of maybe meta title or description elements.
 
-To get started, create a `shared` directory, and create a `_base.html` file.
+> Note: If you're coming from Django or Flask, much of this will be familiar to you. Skip ahead if you're already comfortable with templating mechanics.
 
-Within that file, create a basic html file that looks a little like this:
+To get started, create a `shared` folder within your `templates` directory, and create a `_base.html` file in the `shared` folder.
+
+Within that file, create a basic html file (it might look a little like this):
 
 ```
 <html lang="en">
@@ -151,7 +155,7 @@ Again, change the "path/to/static" to match your app structure.
 
 ### Back to Templates
 
-Lastly, let's include the CSS file in the `_base.html` template. Since it is now mounted to your app, Jinja can access it with a special methode (`url_for()`).
+Lastly, let's include the CSS file in the `_base.html` template. Since it is now mounted to your app, Jinja can access it with a special method (`url_for()`).
 
 Add this line within your `_base.html`:
 ```
@@ -177,18 +181,80 @@ Above, you are overwriting the {% block content %} contained in `_base.html` wit
 
 To see this working, go back to the `route.py` file and change the `TemplateResponse` to point to `main.html` instead of `_base.html`.
 
+### Jinja Syntax and Context
+
+I want to touch on three important items you will want to remember when working with templates.
+
+#### Statements
+
+Jinja statements are expressed with `{% ... %}`
+
+Within these delimiters, you can use control structures (like "for" loops, "if/then" statements, etc..), as well as other special functions (such as the {% include ... %}) shown above.
+
+#### Expressions
+
+Expressions are contained within the `{{ ... }}` delimiters.
+
+These work similar to Python objects. Ordinarily, you will be passing Python objects from your FastAPI app into your template, and these objects can be accessed through these expressions.
+
+One thing to note is that you can actually pass a method object from your app and access it through these expressions. We'll see some of that later.
+
+#### The Context
+
+Above, there was a bullet point from the FastAPI documentation which talks about the "context". Here is that point again:
+
+- Use the templates you created to render and return a TemplateResponse, passing the request as one of the key-value pairs in the Jinja2 "context".
+
+The "context" here is very important. Think of it as the data that you want to pass from your application to your templates. This is how your templates know what Expressions they can access.
+
+For example, look at this template response:
+
+```
+@router.get("/")
+def index(request: Request):
+    return templates.TemplateResponse(
+      "shared/_base.html",
+      {
+        "request": request,
+        "age": 42
+      }
+    )
+```
+
+The dictionary that includes the `request` and `age` keys is considered the "context". Per the FastAPI docs, you _always_ have to send the `request` as part of the context. In addition, we are passing the `age` key.
+
+In a Jinja template, you can then access the _value_ of `age` using an expression.
+
+```
+<p>The answer is {{ age }}.<p>
+```
+Which would ultimately be rendered as:
+```
+The answer is 42.
+```
+
+There's much more to Jinja templates, but it's vital to understand those three key points.
+
+
 ### Run Your App
 
-Every so often, you will want to run your FastAPI application. You can do that with the following command on the command line (make sure you have activated your virtual environment).
+You can run your app at any time to see if everything is working as intended. However, `uvicorn` can watch for changes in your app and restart the server automatically, so you don't have to keep running the command.
 
 ```
 uvicorn app.main:app --reload
 ```
-This is a `uvicorn` CLI command. The argument is looking for a path and a FastAPI app object. The path is `app.main`, followed by `:`, which signals that you will be providing an app object (defined as `app = get_app()` in `main.py`).
 
-The `--reload` option restarts the server every time a change is made to a `.py` file, so you can see changes reflected in browser right away.
+The `--reload` option restarts the server every time a change is made (and saved) to a `.py` file, so you can see changes reflected in browser right away.
 
 If the command is successful, you can visit [127.0.0.1:8000](http://127.0.0.1:8000) to see your app in action.
+
+If you change/save a `.py` file in your app, the server will restart automatically.
+
+> Note: The only files that are "watched" by default are `.py` files. If you want to restart the server when changes are saved to other file types, you can use the `--reload-include TEXT` option. The TEXT is a glob pattern.
+>
+> To include html files, for example, you would use the following command: `uvicorn app.main:app --reload --reload-include *.html`
+
+
 
 
 

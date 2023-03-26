@@ -33,6 +33,7 @@
   - [Mental Overload](#mental-overload)
   - [Practice](#practice)
   - [Extras](#extras)
+  - [What Next?](#what-next)
 - [✍️ Authors ](#️-authors-)
 - [🎉 Acknowledgements ](#-acknowledgements-)
 
@@ -277,6 +278,15 @@ Before your FastAPI app starts up, this is the equivalent of running the followi
 tailwindcss -i "path/to/static/input.css" -o "path/to/static/output.css" --minify
 ```
 > Note: Don't forget to pass the defined `lifespan` object to the `FastAPI` object (i.e., `FastAPI(lifespan=lifespan)`).
+
+### What Next?
+
+Spend some time building out your Jinja templates and create a basic page with links and general info. In the next chapter, we will create a small, makeshift database to emulate the process of making database calls.
+
+It is meant to be very general and is not the focus of what we're building. In fact, if you have a database abstraction already, you can use that instead.
+
+Once you are comfortable with Jinja templates and the way you can use Tailwind, you should be ready to move on.
+
 
 ## ✍️ Authors <a name = "authors"></a>
 

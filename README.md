@@ -9,8 +9,8 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/tataraba/simplesite)](https://github.com/tataraba/simplesite/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/tataraba/simplesite)](https://github.com/tataraba/simplesite/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
@@ -31,6 +31,9 @@
 - [🔧 Running the tests ](#-running-the-tests-)
 - [🎈 Usage ](#-usage-)
 - [📚 Preface](#-preface)
+  - [Installing Your Dependencies](#installing-your-dependencies)
+  - [Building Your App](#building-your-app)
+  - [Running Your App](#running-your-app)
 - [⛏️ Built Using ](#️-built-using-)
 - [✍️ Authors ](#️-authors-)
 - [🎉 Acknowledgements ](#-acknowledgements-)
@@ -100,7 +103,7 @@ This repo is split into four branches, representing different Chapters. Each cha
 
 ## 📚 Preface
 
-The first step to get going is to build a minimal FastAPI application. If you have used other web frameworks before, you should be able to follow along. I recommend starting from scratch, but if you feel like skipping the formalities, you can also clone this template to get going.
+The first step to get going is to build a minimal FastAPI application. If you have used other web frameworks before, you should be able to follow along. I recommend starting from scratch, but if you feel like skipping the formalities, you can also clone this template and move on to Chapter 1.
 
 Otherwise, you'll want to follow these steps.
 
@@ -120,6 +123,25 @@ Within your `app` directory, create the following files:
 - `main.py` - where your FastAPI application will live
 - `config.py` - for app configuration
 - `routes.py` - here we will define our url endpoints or "views"
+
+### Installing Your Dependencies
+
+Next, you need to install the FastAPI and Uvicorn libraries. Additionally, you can also install pytest and httpx for testing purposes.
+
+Open your `requirements.txt` file and type in the following:
+
+```
+fastapi
+uvicorn[standard]
+pytest
+httpx
+```
+
+Next, make sure to activate your virtual environment and install your dependencies ([see above for more detail on installation](#installing)). The command to install from your requirements file is `python -m pip install -r requirements.txt`.
+
+> Note: If you use a package manager, you could use the `pyproject.toml` file included in this template instead.
+
+### Building Your App
 
 Now that you have your structure set, create a basic FastAPI application within `main.py`
 - It's okay, you can look at the code here and copy/paste
@@ -148,7 +170,25 @@ And in `main.py`, you can register all those routes directly to your application
 app.include_router(router)
 ```
 
-Once you're comfortable with this starter application, it is time to move on to Chapter 1.
+### Running Your App
+
+Once you have everything set up, you want to make sure that your app runs.
+
+> Note: I haven't gone over setting up your tests in `pytest`, but take a look at the template to get an idea.
+
+To start your app with the uvicorn server application, you'll need to type the following command:
+
+```
+uvicorn app.main:app
+```
+
+This is a `uvicorn` CLI command. The `app.main` represents the path to a module within your app, and the `:app` represents the object that you are calling (defined as `app = get_app()` in `main.py`).
+
+If the command is successful, you can visit 127.0.0.1:8000 to see your app in all it's _Hello World_ glory.
+
+Take your time getting comfortable with how your app is put together.
+
+Once you're comfortable with how it works, it is time to move on to Chapter 1.
 
 
 

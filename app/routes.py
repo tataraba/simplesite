@@ -136,7 +136,7 @@ def search_post(request: Request, search: Annotated[str, Form()]):
         block_name = "artist_card"
 
     db = CRUD().with_table("artist_details")
-    block_name = "artist_card"
+    # block_name = "artist_card"
     results=[]
     artists = db.search(key="name", value=search)
     print(artists)

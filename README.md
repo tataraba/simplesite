@@ -26,12 +26,12 @@
 - [📝 Table of Contents](#-table-of-contents)
 - [🧐 About ](#-about-)
 - [🏁 Getting Started ](#-getting-started-)
-  - [Prerequisites](#prerequisites)
-  - [Installing](#installing)
-- [🔧 Running the tests ](#-running-the-tests-)
-- [🎈 Usage ](#-usage-)
-- [🚀 Deployment ](#-deployment-)
-- [⛏️ Built Using ](#️-built-using-)
+- [📚 Chapter 4](#-chapter-4)
+  - [Installing?](#installing)
+  - [The Python Stuff](#the-python-stuff)
+  - [Using htmx](#using-htmx)
+  - [Exercise](#exercise)
+  - [Extras](#extras)
 - [✍️ Authors ](#️-authors-)
 - [🎉 Acknowledgements ](#-acknowledgements-)
 - [Chapter 4](#chapter-4)
@@ -42,69 +42,138 @@ Build a beautiful web application using nothing more than Python, htmx, and Tail
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-This repository was prepared as part of a workshop on how to create a python-backed front end, featuring Jinja templates for HTML rendering, TailwindCSS for style, and htmx for pizzazz! 😎
+You can clone this branch and install dependencies from the requirements.txt file (make sure you've created a virtual environment and activated it first).
 
-The main branch contains the "starter" app, which lacks all of the features. It only contains a basic FastAPI "Hello, World!" application. Each subsequent branch contains more features. If you want the fully-featured application, switch to the appropriate branch and select "Use This Template" (make sure to only clone the "current" branch).
+More detailed instructions are available on the [main branch](https://github.com/tataraba/simplesite/tree/main).
 
-### Prerequisites
+## 📚 Chapter 4
 
-Your only requirement is to have **Python 3.11** (or later) installed locally. The rest of the dependencies are in the `pyproject.toml` file, as well as the `requirements.txt` file.
+If you're here, you're probably curious about htmx and what it can do. You may have even heard that it can eliminate your need to learn JavaScript!
 
-> Why both? If you use a package manager (i.e., I use `pdm`), you can use your package manager to install dependencies from the `pyproject.toml`. Otherwise, you can go the more traditional route using the `requirements.txt` file.
+Is this true?
 
-### Installing
+The answer is... Mostly? Maybe? Yes?
 
-If you have a package manager, you can use that to install directly from the `pyproject.toml` file. Otherwise, you can go the traditional rout (see below).
+For a real world case, I would look no further than this DjangoCon EU 2022 talk, titled [From React to htmx on a real-world SaaS product: we did it, and it's awesome!](https://youtube.com/watch?v=3GObi93tjZI&si=EnSIkaIECMiOmarE)
 
-After cloning the repo locally, you will need to create a virtual environment. Navigate to the location where you have cloned the project and run the following command:
+I'm not going to reiterate everything contained in the video, but I think it becomes quite clear that it's not only _possible_ to build without a JavaScript front end, but in many ways, it is _beneficial_!
 
-```
-python -m venv .venv
-```
+Just in case, though, I do want to address some common questions that may come up when considering an htmx-centric approach.
 
-This will create a `.venv` directory within your project.
+What are some of the tradeoffs when using this type of "multi-page application" (MPA) versus a JavaScript driven "single-page application" (SPA)?
 
-Next, activate your environment:
+There is an [excellent essay over at htmx.org](https://htmx.org/essays/a-response-to-rich-harris/) which talks about this in detail, but a couple kep points here:
 
-```
-# On Windows
-.\.venv\Scripts\activate
+- On having to load content on every request: If you're having consistent calls on every request, you could cache that content. But for the most part, with htmx, requests are generally light-weight replacements of Document Object Model (DOM) elements. (How web pages are represented internally to a browser.)
+- On network latency issues: an MPA may suffer if the server is experiencing latency. However, with optimizations like database tuning, Redis caching, and so on, quick responses are easily achievable. The problem with latency is that it makes an app feel laggy&mdash;and this is not really a solved problem in the JavaScript world.
+- On ✨ pizzaz ✨: Transitions and animations are much nicer with JavaScript. However, adding these elements doesn't mean much in respect to long-term accessibility and usability. In any respect, using clever CSS design, as well as with the htmx support for standard CSS transitions, a lot of that sparkle can be replicated.
 
-# On MacOS/Linux
-$ source myvenv/bin/activate
-```
+Okay with all that out of the way, let's get to it.
 
-Then, install the requirements:
-```
-python -m pip install -r requirements.txt
-```
+### Installing?
 
+There's a question mark there because you don't actually _have_ to install anything. Htmx is a dependency-free, browser-oriented JavaScript library. Using it is as simple as adding it to a `<script>` tag in your HTML document head.
 
-## 🔧 Running the tests <a name = "tests"></a>
-
-After activating your virtual environment, you can run tests by typing `pytest` on the command line.
+To test it out, you could just use a CDN. To do so, just add this to within your document head:
 
 ```
-pytest
+<script src="https://unpkg.com/htmx.org@1.8.6" integrity="sha384-Bj8qm/6B+71E6FQSySofJOUjA/gq330vEqjFx9LakWybUySyI1IQHwPtbTU7bNwx" crossorigin="anonymous"></script>
 ```
 
-If everything has gone well so far, all tests should pass.
+But perhaps the next easiest way (and what I recommend) is to copy it into your project.
 
-## 🎈 Usage <a name="usage"></a>
+Within your `static` directory, create a new folder and call it `js`. You can get the file from [unpkg.com](https://unpkg.com/htmx.org@1.8.6/dist/htmx.min.js). Either download it, or copy the contents and create a file in your `js` directory. (I've called my file `htmx.min.js`).
 
-This repo was created primarily to aid in a workshop setting, so your mileage may vary. Feel free to clone the repo and make it your own. But most of all, have fun! 🥳
+Now, add to your document head. You can use the Jinja `url_for()` method to access it, since it is contained within your static directory.
 
-## 🚀 Deployment <a name = "deployment"></a>
+```
+<script src="{{ url_for('static', path='js/htmx.min.js') }}"></script>
+```
 
-- Coming Soon
+And that's it!
 
-## ⛏️ Built Using <a name = "built_using"></a>
+### The Python Stuff
 
-- FastAPI
-- Jinja2
-- TailwindCSS
-- HTMX
+You actually don't _need_ any additional Python packaging to use htmx. There is one library, however, that I use in order to ease the building of templates. I'll get into that later, but for now, let's go ahead and install it.
 
+```
+python -m pip install jinja2-fragments
+```
+> Note: Update your requirements.txt file!
+
+This creates a drop-in replacement for the FastAPI `Jinja2Templates` object. To use it, use `Jinja2Blocks` instead.
+
+Open your `routes.py` file and make the substitution noted above. The top of your module will look something like this:
+
+```
+from fastapi import APIRouter, Request
+from jinja2_fragments.fastapi import Jinja2Blocks
+
+from app.config import Settings
+
+templates = Jinja2Blocks(directory="path/to/templates")
+```
+
+This will enable to render "template fragments." (You can [read more about this paradigm](https://htmx.org/essays/template-fragments/) on the htmx.org website).
+
+Without getting into the details (yet), this means that a `TemplateResponse` can find a defined section _within_ an existing template, and only send that content over to the DOM.
+
+But before delving into that, let's findout how to actuall use htmx!
+
+### Using htmx
+
+At the core, htmx contains a set of attributes that allow you to issue AJAX requests directly within your HTML.
+
+Here are a few of those:
+
+- `hx-get` - issues `GET` request to given URL
+- `hx-post` - issues `POST` request to given URL
+- `hx-delete` - issues `DELETE` request to given URL
+
+(Same applies for `PUT` and `PATCH`)
+
+While these events are triggered by the "natural" event of an element (usually a "click" event), htmx also allows you to define which behavior will trigger the AJAX request. These are defined with an `hx-trigger` attribute.
+
+And very importantly, you can also define the element where the response will be loaded. By default, the response will be loaded into the element that triggered the AJAX request.
+
+But if you want the response to be loaded elsewhere, you can use the `hx-target` attribute to specify which element (this attributes takes a CSS selector as its value).
+
+This makes more sense with an example (taken from [htmx.org](https://htmx.org/docs/)):
+
+```
+<button hx-post="/clicked"
+    hx-trigger="click"
+    hx-target="#parent-div"
+    hx-swap="outerHTML"
+>
+    Click Me!
+</button>
+```
+
+When a user clicks (`hx-trigger`) on this button, a `POST` request is sent to the "/clicked" endpoint (`hx-post`). The response will be sent back looking for an element with the id of "#parent-div" (`hx-target`), and the entire element will be replaced (`hx-swap`).
+
+As you can see, htmx is very declarative with its intentions!
+
+One of the attributes introduced above is `hx-swap`. This defines how the response is swapped into the existing DOM.
+
+A few examples:
+
+- "innerHTML" - the default, puts the content inside the target element
+- "outerHTML" - replaces the entire target element with the returned content
+- "afterbegin" - prepends the content before the first child inside the target
+- "afterend" - appends the content after the target in the targets parent element
+
+### Exercise
+
+1.  Create a `<div>` element that contains artist name. On clicking the element, it only updates the information within that element.
+2.  Active search (more details coming)
+
+
+
+### Extras
+
+- will need to install python-multipart to receive form data (search)
+  - python -m pip install python-multipart
 
 ## ✍️ Authors <a name = "authors"></a>
 
@@ -118,33 +187,3 @@ This repo was created primarily to aid in a workshop setting, so your mileage ma
 
 ## Chapter 4
 
-- Getting htmx
-  - Use a CDN (add this to your head tag)
-    - `<script src="https://unpkg.com/htmx.org@1.8.6" integrity="sha384-Bj8qm/6B+71E6FQSySofJOUjA/gq330vEqjFx9LakWybUySyI1IQHwPtbTU7bNwx" crossorigin="anonymous"></script>`
-  - Download a copy (copy it into your project)
-    - Use github version in `static/htmx/` directory
-    - From [unpkg.com](https://unpkg.com/htmx.org/dist/htmx.min.js)
-    - add `<script src="/path/to/htmx.min.js"></script>` within `<head>` element of html
-- `python -m pip install jinja2-fragments`
-- Substitute `Jinja2Blocks` for `Jinja2Templates`
-- HTMX - use "hx" tags within html attributes
-  - i.e., `<div hx-get="/about">` issues get request to `/about` when element is clicked
-- important attributes
-  - `hx-get` - issues `GET` request to given URL
-  - `hx-post` - issues `POST` request to given URL
-  - `hx-delete` - issues `DELETE` request to given URL
-  - `hx-trigger` - define behavior to send request
-    - i.e., `hx-trigger="mouseenter"` or `hx-trigger="keyup changed"`
-  - `hx-target` - where response will be loaded (looks for css selector id
-```
-  <input type="text" name="q"
-    hx-get="/trigger_delay"
-    hx-trigger="keyup delay:500ms changed"
-    hx-target="#search-results"
-    placeholder="Search..."
->
-<div id="search-results"></div>
-```
-
-- will need to install python-multipart to receive form data (search)
-  - python -m pip install python-multipart

@@ -64,13 +64,6 @@ That response can be wrapped up in the template "context" and sent to the user.
 
 > Note: Even if you're a little unclear on all the gibberish above, don't distress. The main takeaway is this. A user makes a request that gets sent to your web app; your app makes a database call based on that request; the response from the database gets sent back to your templates; the templates render the response for the user.
 
-What are some of the tradeoffs when using this type of "multi-page application" (MPA) versus a Javascript driven "single-page application" (SPA)?
-
-There is an [excellent essay over at htmx.org](https://htmx.org/essays/a-response-to-rich-harris/) which talks about this in detail, but a couple kep points here:
-- On having to load content on every request: If you're having consistent calls on every request, you could cache that content. But for the most part, with htmx, requests are generally light-weight replacements of DOM elements.
-- On network latency issues: an MPA may suffer if the server is experiencing latency. However, with optimizations like database tuning, Redis caching, and so on, quick responses are easily achievable. The problem with latency is that it makes an app feel laggy&mdash;and this is not really a solved problem in the Javascript world.
-- On ✨ pizzaz ✨: Transitions and animations are much nicer with Javascript. However, adding these elements doesn't mean much in respect to long-term accessibility and usability. In any respect, using clever CSS design, as well as with the htmx support for standard CSS transitions, a lot of that sparkle can be replicated.
-
 ### tinydb
 
 The tinydb library provides a tiny, document-oriented database that is stored locally (similar to sqlite).

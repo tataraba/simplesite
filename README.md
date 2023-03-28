@@ -23,17 +23,23 @@
 
 ## 📝 Table of Contents
 
-- [](#)
-      - [Locally](#locally)
-  - [🔧 Running the tests ](#-running-the-tests-)
-  - [🎈 Usage ](#-usage-)
-  - [📚 Preface](#-preface)
-    - [Installing Your Dependencies](#installing-your-dependencies)
-    - [Building Your App](#building-your-app)
-    - [Running Your App](#running-your-app)
-  - [⛏️ Built Using ](#️-built-using-)
-  - [✍️ Authors ](#️-authors-)
-  - [🎉 Acknowledgements ](#-acknowledgements-)
+- [📝 Table of Contents](#-table-of-contents)
+- [🧐 About ](#-about-)
+- [🏁 Getting Started ](#-getting-started-)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+    - [Using CodeSpaces](#using-codespaces)
+    - [Locally](#locally)
+- [🔧 Running the tests ](#-running-the-tests-)
+- [🚗 💨 Need to Catch Up?](#--need-to-catch-up)
+- [🎈 Usage ](#-usage-)
+- [📚 Preface](#-preface)
+  - [Installing Your Dependencies](#installing-your-dependencies)
+  - [Building Your App](#building-your-app)
+  - [Running Your App](#running-your-app)
+- [⛏️ Built Using ](#️-built-using-)
+- [✍️ Authors ](#️-authors-)
+- [🎉 Acknowledgements ](#-acknowledgements-)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -51,17 +57,17 @@ The workshop consists of four **Chapters**, each introducing an additional tool 
 
 Your only requirement is to have **Python 3.11** (or later) installed locally. The rest of the dependencies are in the `pyproject.toml` file, as well as the `requirements.txt` file.
 
-> Why both? If you use a package manager (i.e., I use `pdm`), you can use your package manager to install dependencies from the `pyproject.toml`. Otherwise, you can go the more traditional route using the `requirements.txt` file.
+> Why both? If you use a package manager (i.e., I use `pdm`), you can use your package manager to install dependencies from the `pyproject.toml`. Otherwise, you can go the more traditional route using the `requirements.txt` file. If you use CodeSpaces, you won't need to worry about dependencies!
 
 ### Installing
 
-### Using CodeSpaces
+#### Using CodeSpaces
 Press the green "Code" button above and select "Open with CodeSpaces". This will open a new window in your browser, where you can run the code in a virtual environment.
 
 https://user-images.githubusercontent.com/8632637/228152014-a73297f5-dfd7-400c-96b1-17239dcdb633.mp4
 
 #### Locally
-Create a copy of the repo using the teamplate button above.
+Create a copy of the repo using the template button above.
 
 > **Warning**
 > Be sure to select **ALL branches** when cloning the repo.
@@ -90,20 +96,6 @@ Then, install the requirements:
 python -m pip install -r requirements.txt
 ```
 
-## 🚗 💨 I Need to Catch Up
-There is a script that if you are in codespaces, you can run to catch up to the current chapter. Just run the following command and choose the section we're on:
-
-```shell
-. catchup.sh
-```
-
-https://user-images.githubusercontent.com/8632637/228153775-a3ca38fa-c467-402d-bf60-5c55b0f9b9e9.mp4
-
-or **Manually**:
-
-
-Checkout the branch you want to be on
-
 ## 🔧 Running the tests <a name = "tests"></a>
 
 After activating your virtual environment, you can run tests by typing `pytest` on the command line. This makes sure that your application runs and can generate a "Hello World" message.
@@ -114,11 +106,36 @@ pytest
 
 If everything has gone well so far, all tests should pass.
 
+## 🚗 💨 Need to Catch Up?
+If you are in CodeSpaces, there is a script you can run to catch up to the current Chapter. Just run the following command in your terminal and choose the section we're on:
+
+```shell
+. catchup.sh
+```
+
+https://user-images.githubusercontent.com/8632637/228153775-a3ca38fa-c467-402d-bf60-5c55b0f9b9e9.mp4
+
+...or **manually** (if you're developing locally):
+
+
+Checkout the branch you want to be on
+
 ## 🎈 Usage <a name="usage"></a>
 
 This repo was created primarily to aid in a workshop setting, so your mileage may vary. Feel free to clone the repo and make it your own. But most of all, have fun! 🥳
 
-This repo is split into four branches, representing different Chapters. Each chapter will set the stage for the next.
+To follow in a structured manner, you can follow sequentially with the accompanying markdown files for each branch of the repo.
+
+These chapters are all located in the "markdown" directory. The direct links to the corresponding chapters are listed here for convenience:
+
+| Branch | Chapter | Description
+| --- | --- | --- |
+| [`main`](https://github.com/tataraba/simplesite) | Preface | Getting Started
+| [`01_templates`](https://github.com/tataraba/simplesite/tree/01_templates) | Chapter 1 | Using Jinja Templates to Render HTML
+| [`02_tailwindcss`](https://github.com/tataraba/simplesite/tree/02_tailwindcss) | Chapter 2 | Harnessing TailwindCSS for Consistent Design
+| [`03_tinydb`](https://github.com/tataraba/simplesite/tree/03_tinydb) | Chapter 3 | A Thin Database Layer
+| [`01_htmx`](https://github.com/tataraba/simplesite/tree/04_htmx) | Chapter 4 | Modern Browser Features Directly from HTML
+
 
 ## 📚 Preface
 

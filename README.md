@@ -23,20 +23,17 @@
 
 ## 📝 Table of Contents
 
-- [📝 Table of Contents](#-table-of-contents)
-- [🧐 About ](#-about-)
-- [🏁 Getting Started ](#-getting-started-)
-  - [Prerequisites](#prerequisites)
-  - [Installing](#installing)
-- [🔧 Running the tests ](#-running-the-tests-)
-- [🎈 Usage ](#-usage-)
-- [📚 Preface](#-preface)
-  - [Installing Your Dependencies](#installing-your-dependencies)
-  - [Building Your App](#building-your-app)
-  - [Running Your App](#running-your-app)
-- [⛏️ Built Using ](#️-built-using-)
-- [✍️ Authors ](#️-authors-)
-- [🎉 Acknowledgements ](#-acknowledgements-)
+- [](#)
+      - [Locally](#locally)
+  - [🔧 Running the tests ](#-running-the-tests-)
+  - [🎈 Usage ](#-usage-)
+  - [📚 Preface](#-preface)
+    - [Installing Your Dependencies](#installing-your-dependencies)
+    - [Building Your App](#building-your-app)
+    - [Running Your App](#running-your-app)
+  - [⛏️ Built Using ](#️-built-using-)
+  - [✍️ Authors ](#️-authors-)
+  - [🎉 Acknowledgements ](#-acknowledgements-)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -58,6 +55,12 @@ Your only requirement is to have **Python 3.11** (or later) installed locally. T
 
 ### Installing
 
+### Using CodeSpaces
+Press the green "Code" button above and select "Open with CodeSpaces". This will open a new window in your browser, where you can run the code in a virtual environment.
+
+![Video Showing How to Select Codespaces](assets/Selecting%20Codespaces.mp4)
+
+#### Locally
 If you have a package manager, you can use that to install directly from the `pyproject.toml` file. Otherwise, you can go the traditional route (see below).
 
 After cloning or using this template, you will need to create a virtual environment. Navigate to the location where you have cloned the project (your project root) and run the following command:
@@ -79,10 +82,10 @@ $ source .venv/bin/activate
 ```
 
 Then, install the requirements:
+
 ```
 python -m pip install -r requirements.txt
 ```
-
 
 ## 🔧 Running the tests <a name = "tests"></a>
 
@@ -100,7 +103,6 @@ This repo was created primarily to aid in a workshop setting, so your mileage ma
 
 This repo is split into four branches, representing different Chapters. Each chapter will set the stage for the next.
 
-
 ## 📚 Preface
 
 The first step to get going is to build a minimal FastAPI application. If you have used other web frameworks before, you should be able to follow along. I recommend starting from scratch, but if you feel like skipping the formalities, you can also clone this template and move on to Chapter 1.
@@ -114,11 +116,13 @@ Create a project directory and create your virtual environment.
 Next, create an `app` directory and a `test` directory.
 
 Also, create these files:
+
 - `requirements.txt` - to keep track of your dependencies
 - `.gitignore` - you should really plan to use version control, because why not?
 - `README.md` - Write down some things you may want to remember later
 
 Within your `app` directory, create the following files:
+
 - `__init__.py` - makes your app a "package"
 - `main.py` - where your FastAPI application will live
 - `config.py` - for app configuration
@@ -144,6 +148,7 @@ Next, make sure to activate your virtual environment and install your dependenci
 ### Building Your App
 
 Now that you have your structure set, create a basic FastAPI application within `main.py`
+
 - It's okay, you can look at the code here and copy/paste
 
 For all intents and purposes, you can go through this thing without a `config.py`. I have kept it here because it may be useful if you build out your app in the future. The most important pieces in there are the `STATIC_DIR` and `TEMPLATE_DIR` attributes that point to where our html templates and static files will live. But we'll touch more on that in Chapter 1.
@@ -190,9 +195,6 @@ Take your time getting comfortable with how your app is put together.
 
 Once you're comfortable with how it works, it is time to move on to Chapter 1.
 
-
-
-
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - FastAPI
@@ -200,11 +202,9 @@ Once you're comfortable with how it works, it is time to move on to Chapter 1.
 - TailwindCSS
 - HTMX
 
-
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@tataraba](https://github.com/tataraba) - Mario Munoz, _Python By Night_
-
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 

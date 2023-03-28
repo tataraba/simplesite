@@ -1,10 +1,14 @@
 name: Test
 on: [push, pull_request]
-runs-on: ubuntu-latest
-uses: actions/checkout@v2
-uses: actions/setup-python@v4
-with:
-    python-version: 3.11
-    run: |
-        pip install -r requirements.txt
-        python -m pytest
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-python@v4
+              with:
+                    python-version: 3.11
+            - name: Running PyTest
+              run: |
+                pip install -r requirements.txt
+                python -m pytest

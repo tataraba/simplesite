@@ -12,7 +12,7 @@
         "extensions": [
             "ms-python.python",
             "bradlc.vscode-tailwindcss",
-            "otovo-oss.htmx-tags",
+            "otovo-oss.htmx-tags"
         ]
     }
 }

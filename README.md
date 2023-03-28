@@ -61,7 +61,10 @@ Press the green "Code" button above and select "Open with CodeSpaces". This will
 ![Video Showing How to Select Codespaces](assets/Selecting%20Codespaces.mp4)
 
 #### Locally
-If you have a package manager, you can use that to install directly from the `pyproject.toml` file. Otherwise, you can go the traditional route (see below).
+Create a copy of the repo using the teamplate button above.
+
+> **Warning**
+> Be sure to select **ALL branches** when cloning the repo.
 
 After cloning or using this template, you will need to create a virtual environment. Navigate to the location where you have cloned the project (your project root) and run the following command:
 
@@ -86,6 +89,18 @@ Then, install the requirements:
 ```
 python -m pip install -r requirements.txt
 ```
+
+## 🚗 💨 I Need to Catch Up
+There is a script that if you are in codespaces, you can run to catch up to the current chapter. Just run the following command and choose the section we're on:
+
+```shell
+. catchup.sh
+```
+
+or Manually:
+
+
+Checkout the branch you want to be on
 
 ## 🔧 Running the tests <a name = "tests"></a>
 

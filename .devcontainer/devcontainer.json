@@ -1,0 +1,20 @@
+{
+"name": "FastAPI Demo Container",
+"build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+        "IMAGE": "python:3.11",
+        "context": ".."
+    }
+},
+"customizations": {
+    "vscode": {
+        "extensions": [
+            "ms-python.python",
+            "bradlc.vscode-tailwindcss",
+            "otovo-oss.htmx-tags"
+        ]
+    }
+},
+"postCreateCommand": "pip install -r requirements.txt"
+}

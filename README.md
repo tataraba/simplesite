@@ -97,7 +97,9 @@ There is a script that if you are in codespaces, you can run to catch up to the 
 . catchup.sh
 ```
 
-or Manually:
+https://user-images.githubusercontent.com/8632637/228153775-a3ca38fa-c467-402d-bf60-5c55b0f9b9e9.mp4
+
+or **Manually**:
 
 
 Checkout the branch you want to be on

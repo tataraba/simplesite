@@ -58,7 +58,7 @@ Your only requirement is to have **Python 3.11** (or later) installed locally. T
 ### Using CodeSpaces
 Press the green "Code" button above and select "Open with CodeSpaces". This will open a new window in your browser, where you can run the code in a virtual environment.
 
-![Video Showing How to Select Codespaces](assets/Selecting%20Codespaces.mp4)
+https://user-images.githubusercontent.com/8632637/228152014-a73297f5-dfd7-400c-96b1-17239dcdb633.mp4
 
 #### Locally
 Create a copy of the repo using the teamplate button above.

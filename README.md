@@ -104,7 +104,7 @@ pytest
 If everything has gone well so far, all tests should pass.
 
 ## 🚗 💨 Need to Catch Up?
-If you are in CodeSpaces, there is a script you can run to catch up to the current Chapter. Just run the following command in your terminal and choose the section we're on:
+If you are using Codespaces, there is a script you can run to catch up to the current Chapter. Just run the following command in your terminal and choose the section we're on:
 
 ```shell
 . catchup.sh
@@ -127,13 +127,13 @@ These chapters are all located in the "docs" directory. The direct links to the 
 
 ### :sparkles:Build a Python-Backed Frontend With HTMX and TailwindCSS:sparkles:
 
-| Branch | Chapter | Description
+| Branch | Chapter | Title
 | --- | --- | --- |
-| [`main`](https://github.com/tataraba/simplesite) | Preface | [Getting Started](https://github.com/tataraba/simplesite/blob/main/docs/00_Preface.md) |
-| [`01_templates`](https://github.com/tataraba/simplesite/tree/01_templates) | Chapter 1 | [Using Jinja Templates to Render HTML](https://github.com/tataraba/simplesite/blob/main/docs/01_Chapter_1.md) |
-| [`02_tailwindcss`](https://github.com/tataraba/simplesite/tree/02_tailwindcss) | Chapter 2 | [Harnessing TailwindCSS for Consistent Design](https://github.com/tataraba/simplesite/blob/main/docs/02_Chapter_2.md)
-| [`03_tinydb`](https://github.com/tataraba/simplesite/tree/03_tinydb) | Chapter 3 | [A Thin Database Layer](https://github.com/tataraba/simplesite/blob/main/docs/03_Chapter_3.md)
-| [`01_htmx`](https://github.com/tataraba/simplesite/tree/04_htmx) | Chapter 4 | [Modern Browser Features Directly from HTML](https://github.com/tataraba/simplesite/blob/main/docs/04_Chapter_4.md)
+| Preface | [Getting Started](https://github.com/tataraba/simplesite/blob/main/docs/00_Preface.md) | [`main`](https://github.com/tataraba/simplesite) |
+| Chapter 1 | [Using Jinja Templates to Render HTML](https://github.com/tataraba/simplesite/blob/main/docs/01_Chapter_1.md) | [`01_templates`](https://github.com/tataraba/simplesite/tree/01_templates) |
+| Chapter 2 | [Harnessing TailwindCSS for Consistent Design](https://github.com/tataraba/simplesite/blob/main/docs/02_Chapter_2.md) | [`02_tailwindcss`](https://github.com/tataraba/simplesite/tree/02_tailwindcss) |
+| Chapter 3 | [A Thin Database Layer](https://github.com/tataraba/simplesite/blob/main/docs/03_Chapter_3.md) | [`03_tinydb`](https://github.com/tataraba/simplesite/tree/03_tinydb) |
+| Chapter 4 | [Modern Browser Features Directly from HTML](https://github.com/tataraba/simplesite/blob/main/docs/04_Chapter_4.md) | [`04_htmx`](https://github.com/tataraba/simplesite/tree/04_htmx)  |
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 

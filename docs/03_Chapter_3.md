@@ -11,7 +11,7 @@
 
 ## 📚 Chapter 3: A Thin Database Layer
 
-Before diving into htmx, take a step back to think about what you're trying to accomplish.
+Before diving into htmx, take a step back to think about what we're trying to accomplish.
 
 When a user of your application submits a request, your web app (FastAPI) decides what response to send back to the user.
 
@@ -25,44 +25,46 @@ Regardless of what ORM (Object Relational Mapper) or ODM (Object Document Mapper
 
 That response can be wrapped up in the template "context" and sent to the user.
 
-> Note: Even if you're a little unclear on all the gibberish above, don't distress. The main takeaway is this. A user makes a request that gets sent to your web app; your app makes a database call based on that request; the response from the database gets sent back to your templates; the templates render the response for the user.
+> Note: Even if you're a little unclear on all the gibberish above, don't distress. Just try to picture the "workflow" of a web request: A user makes a request (i.e., clicks a link) that gets sent to your web app; your app makes a database call based on that request; the response from the database gets sent back to your templates; the templates render the response for the user.
 
-### tinydb
+### TinyDB
 
-The tinydb library provides a tiny, document-oriented database that is stored locally (similar to sqlite).
+The TinyDB library provides a tiny, document-oriented database that is stored locally (similar to sqlite).
 
 It is being used here to simulate a database layer without the need of an external server or any other PyPI dependency. But mostly, since the storage layer is document-based and represented as a Python `dict` object, Python developers will already have familiarity with the database responses.
 
-The API is already very easy to understand. However, I've created a new module (`crud.py`) that contains a thin wrapper class (`CRUD`). This class allows you to perform some simple commands:
+The API is already very easy to understand. However, I've created a new module (`crud.py`) that contains a thin wrapper class (`CRUD`). This class allows you to perform some basic commands:
 
 - `all_items()` - return a lits of all items in the database (a `list` of `dict` items)
 - `find(key, value)` - find an exact match of the `key` field with the `value`
 - `search(key, value)` - begin a search of the `key` field, and return all items that contain part of the `value`
 - `get_random_item()` - returns one random item from the database
 
-Note that there aren't any write operations (as of now), but they could easily be added if needed. The operations listed above are the ones used in Chapter 4.
+Note that there aren't any write operations (as of now), but they could easily be added if needed. The operations listed above are used in [Chapter 4](https://github.com/tataraba/simplesite/blob/main/docs/04_Chapter_4.md).
 
 ### Getting Ready
 
-First things first. Install the tinydb library from PyPI.
+First things first. Install the TinyDB library from PyPI.
 
 ```
 python -m pip install tinydb
 ```
 
-> Note: Remember to update your requirements.txt file.
+> Note: Obligatory reminder that you only need to install if you're following along from scratch.
 
-In your project root, create a new directory called `data`. This is where your tinydb database file will live.
+In your project root, create a new directory called `data`. This is where your TinyDB database file will live.
 
 Add `DATA_DIR` to your config file and point it to this new `data` directory.
 
 Create `crud.py` within your `app` directory, which will contain the basic helper class listed above.
 
-Lastly, we need some data to use in the next Chapter. If you want to follow along, it's best to use the data in this repo, containing two tables ("artist_info" and "artist_details").
+Lastly, we need some data to use in the next chapter. If you want to follow along, it's best to use the data in this repo. Note tha TinyDB uses `JSON` as its storage type.
+
+Copy the `data.json` file to your local environment. The file contains two "tables" ("artist_info" and "artist_details") which I'll reference later.
 
 If you have experience creating your own ORM/ODM layer and want to work with your own data, you can choose to do that as well, but you'll have to follow in parallel in the next chapter.
 
-> Note: I totally recommend using your own database layer! The idea remains the same. Make a database call, return the objects back to the template. For example, if your database call returns a Pydantic model, you can pass that object to the template, and then access the value of the model attributes from within the template.
+> Note: I totally recommend using your own database layer if you're comfortable with it! The idea remains the same. Make a database call, return the objects back to the template. For example, if your database call returns a Pydantic model, you can pass that object to the template, and then access the value of the model attributes from within the template.
 
 ### Data
 
@@ -86,7 +88,7 @@ Both of these datasets are used in the examples.
 
 ### CRUD
 
-Feel free to use tinydb directly if you feel comfortable doing so. Otherwise, copy the code in `crud.py` into your own application.
+Feel free to use TinyDB directly if you feel comfortable doing so. Otherwise, copy the code in `crud.py` into your own application.
 
 Here's how you use the class.
 
@@ -118,13 +120,13 @@ Now it's time to put the pieces together. So here's the plan.
 
 When a user visits our home page, we want to show them an image of a random artist, along with their name underneath the image.
 
-Our little Simple Site will now transform into something like a digital CD Binder.
+Our little **Simple Site** will now transform into something like a digital CD Binder.
 
 So let's follow the request at each step of the way.
 
 When a user visits your homepage, they are sending a request. We've already built a route/view for this request in `routes.py`.
 
-```
+```py
 @router.get("/")
 def index(request: Request):
     return templates.TemplateResponse("main.html", {"request": request})
@@ -132,14 +134,14 @@ def index(request: Request):
 
 Now, when that request is made, let's make a call to the database and get a random item from our "artist_info" table. Insert this bit into your `index` method:
 
-```
+```py
 db = CRUD().with_table("artist_info")
 random_artist = db.get_random_item()
 ```
 
 Now that you have a `dict` object called `random_artist`, you can send it to your template in the template "context".
 
-```
+```py
 return templates.TemplateResponse(
       "main.html",
       {
@@ -149,13 +151,13 @@ return templates.TemplateResponse(
   )
 ```
 
-> Note: The "context" contains a key item called `random_artist`, and the assigned value is the object `random_artist`. These **do not** have to match. For example, you could use {"artist": random_artist} instead. This just means that you would access the `random_artist` object within your template with the value assigned to the key (i.e., `artist`). I ordinarily match the key/value strings so as to prevent confusion.
+> Note: The "context" contains a key item called `random_artist`, and the assigned value is the object `random_artist`. These **do not** have to match. For example, you could use {"artist": random_artist} instead. This just means that you would access the `random_artist` object within your template with the value assigned to the key (i.e., `artist`). I ordinarily match the key:value strings so as to prevent confusion.
 
-Now, let's go back to `main.html` in your `templates` directory. You can now use {{ random_artist }} to access the `dict` item obtained from the `db.get_random_item()` database call.
+Now, let's go back to `main.html` in your `templates` directory. You can now use `{{ random_artist }}` to access the `dict` item obtained from the `db.get_random_item()` database call.
 
 Update your `main.html` file to match the following:
 
-```
+```html
 {% extends "/shared/_base.html" %}
 
 {% block content %}
@@ -173,7 +175,7 @@ Update your `main.html` file to match the following:
 
 Notice that we are accessing the `random_artist` object within our `{{ ... }}` expression.
 
-Since the object is a `dict`, we can access values the same way we are used to. In other words, the `{{random_artist['cover_image']}}` will return the _value_ of the `cover_image` key in the `random_artist` dictionary!
+Since the object is a `dict`, we can access values the same way we are used to in Python. In other words, the `{{random_artist['cover_image']}}` will return the _value_ of the `cover_image` key in the `random_artist` dictionary!
 
 I'll have you guess what `{{random_artist['name']}}` will get you. :sunglasses:
 
@@ -181,7 +183,7 @@ Notice tha the above code contains a lot of markup within the HTML elements. If 
 
 Either way, I would encourage you to take change some of those values, and other elements as you see fit, and make it your own!
 
-### Extra
+### Extras
 
 Once you are comfortable with the cycle of request->database->response->template, start branching out and creating other routes.
 
@@ -189,9 +191,9 @@ This might mean creating new templates as well.
 
 You may also think about creating a navigation header which includes links to other parts of your application. If you want this navigation bar to persist throughout your app, you only need to create it once.
 
-For example, create a new file in your `templates/shared` directory and call it `_header.html`. In this file, create a basic navigation element (it can be as simple as this):
+For example, create a new file in your `templates/shared` directory and call it `_header.html`. In this file, create a basic navigation element (it can look something like this&mdash;hopefully the `<div>`s aren't too intimidating):
 
-```
+```html
 <header class="bg-zinc-400 text-slate-900">
     <div class="mx-auto flex flex-col justify-between h-full items-center p">
         <nav class="flex flex-row self-start w-full h-28 py-2">
@@ -209,7 +211,7 @@ Note that there are no Jinja markers on this file. That is because you want to _
 
 You can do that by adding this to your `_base.html` file:
 
-```
+```html
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -238,9 +240,9 @@ For extra extra credit, create a new template that generates a page with the nam
 
 Even better if you can include the _active_ members associated with the artist record.
 
-For reference, a json database record for a particular artist might look like this:
+For reference, the `json` database record for a particular artist might look like this:
 
-```
+```json
 {
     "data_quality": "Needs Major Changes",
     "id": 2484044,
@@ -302,7 +304,7 @@ In the template, you can loop over the list, each time generating everything wit
 
 For example:
 
-```
+```html
 {% for artist in artists %}
 <div class="flex flex-col bg-slate-200 content-center text-center h-12">
     <span>{{artist["name"]}}</span>
@@ -315,4 +317,4 @@ If `artists` is a `list` of `dict` items, this will iterate over the list and ea
 > Note: You don't always have to send the database response directly to the template. A lot of times, you may want to do some processing within the FastAPI method before returning anything to the template. Look at the `routes.py` file in the repo, and notice the specific route for the catalog page. There are functions defined within this route that are then passed directly to the template!
 
 
-Once you have the hang of it, you're ready to move on to Chapter 4.
+Once you're comfortable with this server-side web app, you may be ready to add some 🎇pizzaz🎇. If that's you, then you're ready to move to [Chapter 4](https://github.com/tataraba/simplesite/blob/main/docs/04_Chapter_4.md).

@@ -127,7 +127,7 @@ These chapters are all located in the "docs" directory. The direct links to the 
 
 ### :sparkles:Build a Python-Backed Frontend With HTMX and TailwindCSS:sparkles:
 
-| Branch | Chapter | Title
+| Chapter | Title | Branch
 | --- | --- | --- |
 | Preface | [Getting Started](https://github.com/tataraba/simplesite/blob/main/docs/00_Preface.md) | [`main`](https://github.com/tataraba/simplesite) |
 | Chapter 1 | [Using Jinja Templates to Render HTML](https://github.com/tataraba/simplesite/blob/main/docs/01_Chapter_1.md) | [`01_templates`](https://github.com/tataraba/simplesite/tree/01_templates) |

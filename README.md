@@ -44,30 +44,42 @@ Build a beautiful web application using nothing more than Python, htmx, and Tail
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-This repository was prepared as part of a workshop on how to create a python-backed frontend, featuring Jinja templates for HTML rendering, TailwindCSS for style, and htmx for pizzazz! 😎
+This repository was prepared for a workshop on how to create a python-backed frontend, featuring Jinja templates for HTML rendering, TailwindCSS for style, and htmx for pizzazz! 😎
 
-The workshop consists of four **Chapters**, each introducing an additional tool on the road to making a beautiful* front end. More info below.
+The workshop consists of [four chapters](#-guide-), each introducing an additional tool on the road to creating a beautiful* Python-backed frontend.
 
 > *Note: Beauty is in the eye of the beholder.
 
 ### Prerequisites
 
-Your only requirement is to have **Python 3.11** (or later) installed locally. The rest of the dependencies are in the `pyproject.toml` file, as well as the `requirements.txt` file.
+The example app was created with **Python 3.11**, but it is likely compatible with earlier versions. However, I would highly recommend using the latest version of Python. The rest of the dependencies are listed in the `requirements.txt` file.
 
-> Why both? If you use a package manager (i.e., I use `pdm`), you can use your package manager to install dependencies from the `pyproject.toml`. Otherwise, you can go the more traditional route using the `requirements.txt` file. If you use CodeSpaces, you won't need to worry about dependencies!
+```
+fastapi[all]
+jinja2
+jinja2-fragments
+python-multipart
+pytest
+pytailwindcss
+tinydb
+```
+
+The `fastapi[all]` dependency installs some other optional dependencies and features. It also includes `uvicorn`, which is used as the server to run your code. (You could choose to just use `fastapi` and `uvicorn[standard]` separately, if you prefer.)
+
+> Why is there a `pyproject.toml` file? If you use a package manager (i.e., I use `pdm`), you can use your package manager to install dependencies. Otherwise, you can go the more traditional route using the `requirements.txt` file. If you use Codespaces, you won't need to worry about dependencies!
 
 ### Installing
 
 #### Using Codespaces
-Press the "<> Code" button above and select "Create a Codespace on main". This will open a new window in your browser, where you can run the code in a virtual environment.
+Press the `<> Code` button above and select `Create a Codespace on main`. This will open a new window in your browser, where you can run the code in a virtual environment.
 
 https://user-images.githubusercontent.com/8632637/228152014-a73297f5-dfd7-400c-96b1-17239dcdb633.mp4
 
 #### Locally
-Create a copy of the repo using the "Use this template" button above. Select "Create a new repository"
+Create a copy of the repo using the `Use this template` button above. Select `Create a new repository`.
 
 > **Warning**
-> Be sure to select **Include all branches** when cloning the repo.
+> Be sure to select **`Include all branches`** when cloning the repo.
 
 After cloning or using this template, you will need to create a virtual environment. Navigate to the location where you have cloned the project (your project root) and run the following command in your terminal:
 
@@ -104,7 +116,7 @@ pytest
 If everything has gone well so far, all tests should pass.
 
 ## 🚗 💨 Need to Catch Up?
-If you are using Codespaces, there is a script you can run to catch up to the current Chapter. Just run the following command in your terminal and choose the section we're on:
+If you are using Codespaces, there is a script you can use to catch up to the current chapter. Just run the following command in your terminal and choose the section we're on:
 
 ```shell
 . catchup.sh
@@ -112,18 +124,18 @@ If you are using Codespaces, there is a script you can run to catch up to the cu
 
 https://user-images.githubusercontent.com/8632637/228153775-a3ca38fa-c467-402d-bf60-5c55b0f9b9e9.mp4
 
-...or **manually** (if you're developing locally):
+Or (if you're developing locally) to catch up **manually**...
 
 
-Checkout the branch you want to be on
+Checkout the branch that corresponds to the appropriate section (see below).
 
 ## 🎈 Guide <a name="guide"></a>
 
-This repo was created primarily to aid in a workshop setting, so your mileage may vary. Feel free to clone the repo and make it your own. But most of all, have fun! 🥳
+This repo was created primarily to aid in a workshop setting, so your mileage may vary. Feel free to clone it and make it your own. But most of all, have fun! 🥳
 
-To follow in a structured manner, you can follow sequentially with the accompanying markdown files for each branch of the repo.
+To take a more structured approach, you can follow sequentially with the accompanying markdown files for each branch of the repo.
 
-These chapters are all located in the "docs" directory. The direct links to the corresponding chapters are listed here for convenience.
+These Chapters are all located in the "docs" directory. The direct links to the corresponding chapters are listed here for convenience.
 
 ### :sparkles:Build a Python-Backed Frontend With HTMX and TailwindCSS:sparkles:
 

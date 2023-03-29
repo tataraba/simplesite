@@ -11,9 +11,23 @@
 
 ## 📚 Preface: Getting Started
 
-The first step to get going is to build a minimal FastAPI application. If you have used other web frameworks before, you should be able to follow along. I recommend starting from scratch, but if you feel like skipping the formalities, you can also clone this template and move on to Chapter 1.
+First of all. Welcome!
 
-Otherwise, you'll want to follow these steps.
+Thank you for stopping by. This document began as bullet points for a workshop, and let's just say it grew _a little_ beyond the initial scope.
+
+My (time) loss, is your gain!
+
+If you want to get started right away, feel free to clone the repo or select "Use this template."
+
+This project is also set up to work with [GitHub Codespaces](https://github.com/features/codespaces).
+
+> Note: GitHub Codespaces allows you to work in the cloud without setting up a local development environment. All dependencies are managed for you! All personal GitHub accounts include a monthly quota of 60 hours of free usage.
+
+Once you have cloned the starter application, you are ready to move on to [Chapter 1](https://github.com/tataraba/simplesite/blob/main/docs/01_Chapter_1.md).
+
+If you want to go the more traditional route, you can clone/copy to your local environment. If you're fairly new to web frameworks, I recommend starting from scratch, as it helps create a mental model of how all the pieces fit together.
+
+### From Scratch
 
 Create a project directory and create your virtual environment.
 
@@ -47,7 +61,7 @@ pytest
 httpx
 ```
 
-Next, make sure to activate your virtual environment and install your dependencies ([see above for more detail on installation](#installing)). The command to install from your requirements file is `python -m pip install -r requirements.txt`.
+Next, make sure to activate your virtual environment and install your dependencies. The command to install from your requirements file is `python -m pip install -r requirements.txt`.
 
 > Note: If you use a package manager, you could use the `pyproject.toml` file included in this template instead.
 
@@ -57,9 +71,9 @@ Now that you have your structure set, create a basic FastAPI application within 
 
 - It's okay, you can look at the code here and copy/paste
 
-For all intents and purposes, you can go through this thing without a `config.py`. I have kept it here because it may be useful if you build out your app in the future. The most important pieces in there are the `STATIC_DIR` and `TEMPLATE_DIR` attributes that point to where our html templates and static files will live. But we'll touch more on that in Chapter 1.
+For all intents and purposes, you can go through this exercise without a `config.py`. I have kept it here because it may be useful if you build out your app in the future. The most important pieces in there are the `STATIC_DIR` and `TEMPLATE_DIR` attributes that point to where our html templates and static files will live. But we'll touch more on that in Chapter 1.
 
-The `FASTAPI_PROPERTIES` are just key:value pairs that we can pass to the `FastAPI` object. The most important piece in there is the `defaulet_response_class` that changes the default response type of your FastAPI application.
+The `FASTAPI_PROPERTIES` are just _key:value_ pairs that we can pass to the `FastAPI` object. The most important piece in there is the `defaulet_response_class` that changes the default response type of your FastAPI application.
 
 While most "Hello World" style FastAPI tutorials include their routes/views within the context of the application (i.e., in `main.py`), in practice, it's better to keep these elsewhere, which is why you created a `routes.py` file.
 
@@ -95,8 +109,8 @@ uvicorn app.main:app
 
 This is a `uvicorn` CLI command. The `app.main` represents the path to a module within your app, and the `:app` represents the object that you are calling (defined as `app = get_app()` in `main.py`).
 
-If the command is successful, you can visit 127.0.0.1:8000 to see your app in all it's _Hello World_ glory.
+If the command is successful, you can visit [127.0.0.1:8000](http://127.0.0.1:8000) to see your app in all it's _Hello World_ glory.
 
 Take your time getting comfortable with how your app is put together.
 
-Once you're comfortable with how it works, it is time to move on to Chapter 1.
+Once you're comfortable with how it works, it is time to move on to [Chapter 1](https://github.com/tataraba/simplesite/blob/main/docs/01_Chapter_1.md).

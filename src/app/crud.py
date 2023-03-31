@@ -44,7 +44,7 @@ class CRUD:
 
     @property
     def init_db(self):
-        path = str(settings.DATA_DIR / "_data.json")
+        path = str(settings.DATA_DIR / "data.json")
         self.db = TinyDB(path, sort_keys=True, indent=4, separators=(",", ": "))
         return self.db
 

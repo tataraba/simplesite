@@ -10,14 +10,14 @@
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/tataraba/simplesite)](https://github.com/tataraba/simplesite/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/tataraba/simplesite)](https://github.com/tataraba/simple-site/pulls)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/tataraba/simplesite)](https://github.com/tataraba/simplesite/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
 ---
 
-<p align="center"> Creating a Python-backed front end, featuring FastAPI, htmx, and TailwindCSS.
+<p align="center"> Create a Python-backed frontend with FastAPI, htmx, and TailwindCSS. Build it from scratch and follow the guide. Alternatively, clone the repo/use the template, or better yet, spin up a Codespace and start right away!
     <br>
 </p>
 
@@ -26,15 +26,17 @@
 - [📝 Table of Contents](#-table-of-contents)
 - [🧐 About ](#-about-)
 - [🏁 Getting Started ](#-getting-started-)
-- [📚 Chapter 4](#-chapter-4)
-  - [Installing?](#installing)
-  - [The Python Stuff](#the-python-stuff)
-  - [Using htmx](#using-htmx)
-  - [Exercise](#exercise)
-  - [Extras](#extras)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+    - [Using Codespaces](#using-codespaces)
+    - [Locally](#locally)
+- [🔧 Running the tests ](#-running-the-tests-)
+- [🚗 💨 Need to Catch Up?](#--need-to-catch-up)
+- [🎈 Guide ](#-guide-)
+  - [:sparkles:Build a Python-Backed Frontend With HTMX and TailwindCSS:sparkles:](#sparklesbuild-a-python-backed-frontend-with-htmx-and-tailwindcsssparkles)
+- [⛏️ Built Using ](#️-built-using-)
 - [✍️ Authors ](#️-authors-)
 - [🎉 Acknowledgements ](#-acknowledgements-)
-- [Chapter 4](#chapter-4)
 
 ## 🧐 About <a name = "about"></a>
 
@@ -42,148 +44,121 @@ Build a beautiful web application using nothing more than Python, htmx, and Tail
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-You can clone this branch and install dependencies from the requirements.txt file (make sure you've created a virtual environment and activated it first).
+This repository was prepared for a workshop on how to create a python-backed frontend, featuring Jinja templates for HTML rendering, TailwindCSS for style, and htmx for pizzazz! 😎
 
-More detailed instructions are available on the [main branch](https://github.com/tataraba/simplesite/tree/main).
+The workshop consists of [four chapters](#-guide-), each introducing an additional tool on the road to creating a beautiful* Python-backed frontend.
 
-## 📚 Chapter 4
+> *Note: Beauty is in the eye of the beholder.
 
-If you're here, you're probably curious about htmx and what it can do. You may have even heard that it can eliminate your need to learn JavaScript!
+### Prerequisites
 
-Is this true?
-
-The answer is... Mostly? Maybe? Yes?
-
-For a real world case, I would look no further than this DjangoCon EU 2022 talk, titled [From React to htmx on a real-world SaaS product: we did it, and it's awesome!](https://youtube.com/watch?v=3GObi93tjZI&si=EnSIkaIECMiOmarE)
-
-I'm not going to reiterate everything contained in the video, but I think it becomes quite clear that it's not only _possible_ to build without a JavaScript front end, but in many ways, it is _beneficial_!
-
-Just in case, though, I do want to address some common questions that may come up when considering an htmx-centric approach.
-
-What are some of the tradeoffs when using this type of "multi-page application" (MPA) versus a JavaScript driven "single-page application" (SPA)?
-
-There is an [excellent essay over at htmx.org](https://htmx.org/essays/a-response-to-rich-harris/) which talks about this in detail, but a couple kep points here:
-
-- On having to load content on every request: If you're having consistent calls on every request, you could cache that content. But for the most part, with htmx, requests are generally light-weight replacements of Document Object Model (DOM) elements. (How web pages are represented internally to a browser.)
-- On network latency issues: an MPA may suffer if the server is experiencing latency. However, with optimizations like database tuning, Redis caching, and so on, quick responses are easily achievable. The problem with latency is that it makes an app feel laggy&mdash;and this is not really a solved problem in the JavaScript world.
-- On ✨ pizzaz ✨: Transitions and animations are much nicer with JavaScript. However, adding these elements doesn't mean much in respect to long-term accessibility and usability. In any respect, using clever CSS design, as well as with the htmx support for standard CSS transitions, a lot of that sparkle can be replicated.
-
-Okay with all that out of the way, let's get to it.
-
-### Installing?
-
-There's a question mark there because you don't actually _have_ to install anything. Htmx is a dependency-free, browser-oriented JavaScript library. Using it is as simple as adding it to a `<script>` tag in your HTML document head.
-
-To test it out, you could just use a CDN. To do so, just add this to within your document head:
+The example app was created with **Python 3.11**, but it is likely compatible with earlier versions. However, I would highly recommend using the latest version of Python. The rest of the dependencies are listed in the `requirements.txt` file.
 
 ```
-<script src="https://unpkg.com/htmx.org@1.8.6" integrity="sha384-Bj8qm/6B+71E6FQSySofJOUjA/gq330vEqjFx9LakWybUySyI1IQHwPtbTU7bNwx" crossorigin="anonymous"></script>
+fastapi[all]
+jinja2
+jinja2-fragments
+python-multipart
+pytest
+pytailwindcss
+tinydb
 ```
 
-But perhaps the next easiest way (and what I recommend) is to copy it into your project.
+The `fastapi[all]` dependency installs some other optional dependencies and features. It also includes `uvicorn`, which is used as the server to run your code. (You could choose to just use `fastapi` and `uvicorn[standard]` separately, if you prefer.)
 
-Within your `static` directory, create a new folder and call it `js`. You can get the file from [unpkg.com](https://unpkg.com/htmx.org@1.8.6/dist/htmx.min.js). Either download it, or copy the contents and create a file in your `js` directory. (I've called my file `htmx.min.js`).
+> Why is there a `pyproject.toml` file? If you use a package manager (i.e., I use `pdm`), you can use your package manager to install dependencies. Otherwise, you can go the more traditional route using the `requirements.txt` file. If you use Codespaces, you won't need to worry about dependencies!
 
-Now, add to your document head. You can use the Jinja `url_for()` method to access it, since it is contained within your static directory.
+### Installing
 
-```
-<script src="{{ url_for('static', path='js/htmx.min.js') }}"></script>
-```
+#### Using Codespaces
+Press the `<> Code` button above and select `Create a Codespace on main`. This will open a new window in your browser, where you can run the code in a virtual environment.
 
-And that's it!
+https://user-images.githubusercontent.com/8632637/228152014-a73297f5-dfd7-400c-96b1-17239dcdb633.mp4
 
-### The Python Stuff
+#### Locally
+Create a copy of the repo using the `Use this template` button above. Select `Create a new repository`.
 
-You actually don't _need_ any additional Python packaging to use htmx. There is one library, however, that I use in order to ease the building of templates. I'll get into that later, but for now, let's go ahead and install it.
+> **Warning**
+> Be sure to select **`Include all branches`** when cloning the repo.
 
-```
-python -m pip install jinja2-fragments
-```
-> Note: Update your requirements.txt file!
-
-This creates a drop-in replacement for the FastAPI `Jinja2Templates` object. To use it, use `Jinja2Blocks` instead.
-
-Open your `routes.py` file and make the substitution noted above. The top of your module will look something like this:
+After cloning or using this template, you will need to create a virtual environment. Navigate to the location where you have cloned the project (your project root) and run the following command in your terminal:
 
 ```
-from fastapi import APIRouter, Request
-from jinja2_fragments.fastapi import Jinja2Blocks
-
-from app.config import Settings
-
-templates = Jinja2Blocks(directory="path/to/templates")
+python -m venv .venv
 ```
 
-This will enable to render "template fragments." (You can [read more about this paradigm](https://htmx.org/essays/template-fragments/) on the htmx.org website).
+This will create a `.venv` directory within your project.
 
-Without getting into the details (yet), this means that a `TemplateResponse` can find a defined section _within_ an existing template, and only send that content over to the DOM.
-
-But before delving into that, let's findout how to actuall use htmx!
-
-### Using htmx
-
-At the core, htmx contains a set of attributes that allow you to issue AJAX requests directly within your HTML.
-
-Here are a few of those:
-
-- `hx-get` - issues `GET` request to given URL
-- `hx-post` - issues `POST` request to given URL
-- `hx-delete` - issues `DELETE` request to given URL
-
-(Same applies for `PUT` and `PATCH`)
-
-While these events are triggered by the "natural" event of an element (usually a "click" event), htmx also allows you to define which behavior will trigger the AJAX request. These are defined with an `hx-trigger` attribute.
-
-And very importantly, you can also define the element where the response will be loaded. By default, the response will be loaded into the element that triggered the AJAX request.
-
-But if you want the response to be loaded elsewhere, you can use the `hx-target` attribute to specify which element (this attributes takes a CSS selector as its value).
-
-This makes more sense with an example (taken from [htmx.org](https://htmx.org/docs/)):
+Next, activate your environment:
 
 ```
-<button hx-post="/clicked"
-    hx-trigger="click"
-    hx-target="#parent-div"
-    hx-swap="outerHTML"
->
-    Click Me!
-</button>
+# On Windows
+.\.venv\Scripts\activate
+
+# On MacOS/Linux
+$ source .venv/bin/activate
 ```
 
-When a user clicks (`hx-trigger`) on this button, a `POST` request is sent to the "/clicked" endpoint (`hx-post`). The response will be sent back looking for an element with the id of "#parent-div" (`hx-target`), and the entire element will be replaced (`hx-swap`).
+Then, install the requirements:
 
-As you can see, htmx is very declarative with its intentions!
+```
+python -m pip install -r requirements.txt
+```
 
-One of the attributes introduced above is `hx-swap`. This defines how the response is swapped into the existing DOM.
+## 🔧 Running the tests <a name = "tests"></a>
 
-A few examples:
+After activating your virtual environment, you can run tests by typing `pytest` on the command line. This makes sure that your application runs and can generate a "Hello World" message.
 
-- "innerHTML" - the default, puts the content inside the target element
-- "outerHTML" - replaces the entire target element with the returned content
-- "afterbegin" - prepends the content before the first child inside the target
-- "afterend" - appends the content after the target in the targets parent element
+```
+pytest
+```
 
-### Exercise
+If everything has gone well so far, all tests should pass.
 
-1.  Create a `<div>` element that contains artist name. On clicking the element, it only updates the information within that element.
-2.  Active search (more details coming)
+## 🚗 💨 Need to Catch Up?
+If you are using Codespaces, there is a script you can use to catch up to the current chapter. Just run the following command in your terminal and choose the section we're on:
+
+```shell
+. catchup.sh
+```
+
+https://user-images.githubusercontent.com/8632637/228153775-a3ca38fa-c467-402d-bf60-5c55b0f9b9e9.mp4
+
+Or (if you're developing locally) to catch up **manually**...
 
 
+Checkout the branch that corresponds to the appropriate section (see below).
 
-### Extras
+## 🎈 Guide <a name="guide"></a>
 
-- will need to install python-multipart to receive form data (search)
-  - python -m pip install python-multipart
+This repo was created primarily to aid in a workshop setting, so your mileage may vary. Feel free to clone it and make it your own. But most of all, have fun! 🥳
+
+To take a more structured approach, you can follow sequentially with the accompanying markdown files for each branch of the repo.
+
+These Chapters are all located in the "docs" directory. The direct links to the corresponding chapters are listed here for convenience.
+
+### :sparkles:Build a Python-Backed Frontend With HTMX and TailwindCSS:sparkles:
+
+| Chapter | Title | Branch
+| --- | --- | --- |
+| Preface | [Getting Started](https://github.com/tataraba/simplesite/blob/main/docs/00_Preface.md) | [`main`](https://github.com/tataraba/simplesite) |
+| Chapter 1 | [Using Jinja Templates to Render HTML](https://github.com/tataraba/simplesite/blob/main/docs/01_Chapter_1.md) | [`01_templates`](https://github.com/tataraba/simplesite/tree/01_templates) |
+| Chapter 2 | [Harnessing TailwindCSS for Consistent Design](https://github.com/tataraba/simplesite/blob/main/docs/02_Chapter_2.md) | [`02_tailwindcss`](https://github.com/tataraba/simplesite/tree/02_tailwindcss) |
+| Chapter 3 | [A Thin Database Layer](https://github.com/tataraba/simplesite/blob/main/docs/03_Chapter_3.md) | [`03_tinydb`](https://github.com/tataraba/simplesite/tree/03_tinydb) |
+| Chapter 4 | [Modern Browser Features Directly from HTML](https://github.com/tataraba/simplesite/blob/main/docs/04_Chapter_4.md) | [`04_htmx`](https://github.com/tataraba/simplesite/tree/04_htmx)  |
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- FastAPI
+- Jinja2
+- TailwindCSS
+- TinyDB
+- htmx
 
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@tataraba](https://github.com/tataraba) - Mario Munoz, _Python By Night_
 
-
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Coming soon
-
-
-## Chapter 4
-
+- [@kjaymiller](https://github.com/kjaymiller) - Jay Miller, _Senior Cloud Advocate-Python_, Microsoft

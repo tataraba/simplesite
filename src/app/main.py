@@ -11,7 +11,7 @@ def get_app() -> FastAPI:
 
     app = FastAPI(**settings.fastapi_kwargs)
 
-    app.mount("/static", StaticFiles(directory=settings.STATIC_DIR), name="static")
+    app.mount("/src/static", StaticFiles(directory=settings.STATIC_DIR), name="static")
 
     app.include_router(router)
 

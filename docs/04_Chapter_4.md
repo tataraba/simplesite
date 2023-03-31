@@ -11,7 +11,7 @@
 
 ## 📚 Chapter 4: Modern Browser Features Directly from HTML
 
-If you're here, you're either curious about htmx and what it can do, or ready to ditch unneeded complexity in your web stack. You may have even heard that it can eliminate your need to learn JavaScript!
+If you're here, you're either curious about htmx and what it can do, or ready to ditch unneeded complexity in your web stack. You may have even heard that this could eliminate your need to learn JavaScript!
 
 Is this true?
 
@@ -39,7 +39,7 @@ Okay with all that out of the way, let's get to it.
 
 There's a question mark there because you don't actually _have_ to install anything. Htmx is a dependency-free, browser-oriented JavaScript library. Using it is as straightforward as adding it to a `<script>` tag in your HTML document head.
 
-To test it out, you could just use a CDN. To do so, add this line within your document head:
+To test it out, you could just use a CDN. To do so, add this line within your document:
 
 ```html
 <script src="https://unpkg.com/htmx.org@1.8.6" integrity="sha384-Bj8qm/6B+71E6FQSySofJOUjA/gq330vEqjFx9LakWybUySyI1IQHwPtbTU7bNwx" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@ To test it out, you could just use a CDN. To do so, add this line within your do
 
 But perhaps the next easiest way (and what I recommend) is to copy it into your project.
 
-Within your `static` directory, create a new folder and call it `js`. You can get the file from [unpkg.com](https://unpkg.com/htmx.org@1.8.6/dist/htmx.min.js). Either download it, or copy the contents and create a file in your `js` directory. (I've called my file `htmx.min.js`). (Or, you could use the same file in this template.)
+Within your `static` directory, create a new folder and call it `js`. You can get the file from [unpkg.com](https://unpkg.com/htmx.org@1.8.6/dist/htmx.min.js). Either download it, or copy the contents and create a new file in your `js` directory. (I've called my file `htmx.min.js`).
 
 Now, add the script element to your document head. You can use the Jinja `url_for()` method to access it, since it is contained within your static directory.
 
@@ -184,11 +184,18 @@ It's now time to put it all together.
 
 In the `routes.py` file, create an endpoint for `/catalog`.
 
-When a user navigates to this endpoint, we want to give show cards of all the artists that are in the "artist_details" table of TinyDB.
+When a user navigates to this endpoint, we want to display "cards" corresponding to each of the artists that are in the "artist_details" table of TinyDB.
 
 Make a call to the database that gets all artist data, and send that data to your template.
 
+```py
+db = CRUD().from_table("artist_details")
+artists = db.all_items()
+```
+
 In your template, you can iterate over that list of artists and extract the artist name.
+
+> Note: You are iterating over a `list` of `dict` items. The `key` containing the `value` we want is "name".
 
 Create `<div>` elements using Tailwind to resemble square or rectangular "cards".
 
@@ -198,11 +205,142 @@ Once you have that part working, create an htmx request on the `<div>` element t
 
 The htmx request should obtain the artist profile (it should be contained within the same `dict` object used for artist name).
 
+> Note: The `key` containing the `value` is called... "profile"
+
 And for extra credit, make it so that when you click the card again, it returns to the artist name.
 
 ### Active Search
 
-For the final exercise...
+For the final exercise, we're going to implement active search.
 
-- will need to install python-multipart to receive form data (search)
-  - python -m pip install python-multipart
+For this, we're going to need an html element for the user to input their search. This can be from within a `<form>` element or an `<input>` element.
+
+This will require the last dependency used throughout this guide. (HTML forms send data to the server with a special encoding different than the usual JSON).
+
+```
+python -m pip install python-multipart
+```
+> Note: Obligatory comment about only needing dependency if building from scratch...
+
+This allows FastAPI to gather the request submitted from the form.
+
+Here's an example of a search element:
+
+```html
+ <div>
+    <input name="search" type="search" placeholder="Search..."
+           class="border w-60 py-1 px-4 h-10 font-mono" />
+</div>
+```
+
+You can choose where you want this search to happen. I've placed it within my site header, or you may choose to have a dedicated route/endpoint where users conduct a search.
+
+Style it however you want using Tailwind and think about where you will want the search content to be generated.
+
+We know that we want to use htmx to send the request, but we want the search content to be generated in a different `<div>` element.
+
+We know that we can target any element by using a CSS selector, so create a `<div>` element where you want the search results to generate, and give it a meaningful `id`. It can remain empty, or contain a message that will be replaced by search elements.
+
+```html
+<div id="search-results">No results</div>
+```
+
+Now, we can introduce the htmx into the `<input>` element. Try to accomplish the following:
+
+-   Send a `POST` request
+-   Make it trigger on a keypress ("keyup changed")
+-   Load the response into the "#search-results" `<div>` element
+
+Once your html is ready, head over to your `route.py` file and create the appropriate endpoint.
+
+Perhaps you've built a `/search` endpoint. In order to receive the form data from the request, FastAPI needs to know about it.
+
+```py
+@router.post("/search")
+def search_post(request: Request, search: Annotated[str, Form()]):
+    ...
+```
+
+Note that the `search` argument matches the `name` of the `<input>` element from your template.
+
+So now that you've gotten this part, you have a request that will be posted to this endpoint everytime it's triggered ("keyup changed").
+
+Use the `search` value to look in the database for any artist name that contains that value.
+
+If you're using the TinyDB helper class (`CRUD`), you can use the following method:
+
+```py
+search_results = db.search(key="name", value=search)
+```
+
+Remember, the object passed to the `value` argument is equivalent to the `POST` request sent by htmx.
+
+Once you have your `search_results`, you can send these back to your template for display.
+
+But wait, where will these results be generated?
+
+Make sure your `TemplateResponse` is pointing to the correct template file. That template file should have a Jinja expression that loops through the `search_results` and displays the data that you choose to display. It can be just the artist name, or it can be an entire `<div>` element with additional data from the search results.
+
+Try to generate a few different things using an HTML and Tailwind tricks you may have up your sleeve.
+
+Once you get the search working on "keyup changed", you'll notice how jittery it might feel to have nearly instant searches hitting the server. One way to smooth things out is by adding a modifier to delay the search.
+
+```
+hx-trigger="keyup changed delay:500ms"
+```
+The attribute above delays the search by 500ms, meaning that if someone types a few letters quickly into the search bar, the search will not execute until 500ms have passed.
+
+This makes for a smoother experience.
+
+If you got the active search working, give yourself a nice pat on the back, and if you're feeling a bit cheeky, bid a fond farewell to JavaScript.
+
+### Extra
+
+There are a few more tips and tricks to make your htmx experience even better.
+
+I mentioned the `jinja2-fragments` package earlier, but so far, the functionality has been the same as the regular `Jinja2Templates` included with FastAPI.
+
+One feature that is unlocked by using the `Jinja2Blocks` class instead is the idea of template fragments.
+
+As of now, we've seen that if we want to send a separate response from an htmx request, it's often a snippet of HTML code that we want to insert somewhere.
+
+If you're using htmx a lot (and why wouldn't you!), you'll eventually have a lot of these snippets hanging out somewhere, and you would have to make sure to render _those_ files instead of the template you use for the main page content.
+
+Your routes might end up looking something like the example we saw earlier:
+
+```py
+@router.get("/page")
+def some_page(request: Request):
+
+    template = "full_content.html"
+
+    if request.headers.get("HX-Request"):
+        template = "partial_content.html"
+
+    return template.TemplateResponse(
+        template,
+        {
+            "request": request,
+        }
+    )
+```
+
+Note that the `partial_content.html` file has to be set explicitly for the `HX-Request`.
+
+
+But... _what if you could use **one** template file, and only render specific blocks of code as needed?_
+
+Take a look at this HTML, for example:
+
+```html
+<html>
+    <body>
+        <h1>Search Results</h1>
+        <div hx-target="search-results">
+            <p>No results found</p>
+            <!-- content from partial_content.html -->
+            <!-- htmx request would replace everything here -->
+        </div>
+    </body>
+</html>
+```

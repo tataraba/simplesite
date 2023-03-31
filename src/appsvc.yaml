@@ -1,0 +1,3 @@
+version: 1
+
+run: uvicorn app.main:app --workers 4

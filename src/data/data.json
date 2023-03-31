@@ -4963,6 +4963,72 @@
                 "http://www.youtube.com/user/dnots"
             ]
         },
+        "48": {
+            "data_quality": "Needs Vote",
+            "id": 3001152,
+            "images": [
+                {
+                    "height": 400,
+                    "resource_url": "https://i.discogs.com/fMwd-4CyeExVjz06Wfnvqge6AnMG7857KDR5J9_zlok/rs:fit/g:sm/q:90/h:400/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTMwMDEx/NTItMTM1MjUwOTEx/Mi05NDQ2LmpwZWc.jpeg",
+                    "type": "primary",
+                    "uri": "https://i.discogs.com/fMwd-4CyeExVjz06Wfnvqge6AnMG7857KDR5J9_zlok/rs:fit/g:sm/q:90/h:400/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTMwMDEx/NTItMTM1MjUwOTEx/Mi05NDQ2LmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/erhIEoLQom3Dj4ftLiovJDoFH1FCR2129vydM0We40E/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTMwMDEx/NTItMTM1MjUwOTEx/Mi05NDQ2LmpwZWc.jpeg",
+                    "width": 600
+                }
+            ],
+            "members": [
+                {
+                    "active": true,
+                    "id": 2201401,
+                    "name": "Simon Mavin",
+                    "resource_url": "https://api.discogs.com/artists/2201401",
+                    "thumbnail_url": ""
+                },
+                {
+                    "active": true,
+                    "id": 3470140,
+                    "name": "Nai Palm",
+                    "resource_url": "https://api.discogs.com/artists/3470140",
+                    "thumbnail_url": "https://i.discogs.com/UFbWOIbvgPXNt_TJZO2F9KdpSVBam0ri8DlIPtWLXGU/rs:fit/g:sm/q:40/h:472/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTM0NzAx/NDAtMTYxMDM2OTA2/OC0xODI3LmpwZWc.jpeg"
+                },
+                {
+                    "active": true,
+                    "id": 4080625,
+                    "name": "Clever Austin",
+                    "resource_url": "https://api.discogs.com/artists/4080625",
+                    "thumbnail_url": "https://i.discogs.com/MG_dLyvODRUBUz7z6EmhBs8mH8Q95phosqcjhQVoPuE/rs:fit/g:sm/q:40/h:400/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTQwODA2/MjUtMTU1MzEyMDA0/NC02NDQwLmpwZWc.jpeg"
+                },
+                {
+                    "active": true,
+                    "id": 4080626,
+                    "name": "Perrin Moss",
+                    "resource_url": "https://api.discogs.com/artists/4080626",
+                    "thumbnail_url": "https://i.discogs.com/ovBPYgIbZq2XOv87xjL6qCErXjwQNPPCcBojyzWl95Q/rs:fit/g:sm/q:40/h:337/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTQwODA2/MjYtMTYzNDE4MjA4/OS00NjEwLmpwZWc.jpeg"
+                },
+                {
+                    "active": true,
+                    "id": 4356863,
+                    "name": "Paul Bender (2)",
+                    "resource_url": "https://api.discogs.com/artists/4356863",
+                    "thumbnail_url": ""
+                }
+            ],
+            "name": "Hiatus Kaiyote",
+            "namevariations": [
+                "Hiyatus Kiyote",
+                "\u30cf\u30a4\u30a8\u30a4\u30bf\u30b9\u30ab\u30a4\u30e8\u30fc\u30c6"
+            ],
+            "profile": "Hiatus Kaiyote is a future soul quartet formed in Melbourne in 2011.",
+            "releases_url": "https://api.discogs.com/artists/3001152/releases",
+            "resource_url": "https://api.discogs.com/artists/3001152",
+            "uri": "https://www.discogs.com/artist/3001152-Hiatus-Kaiyote",
+            "urls": [
+                "http://hiatuskaiyote.com/",
+                "https://soundcloud.com/hiatus-kaiyote",
+                "https://en.wikipedia.org/wiki/Hiatus_Kaiyote",
+                "https://hiatuskaiyote.bandcamp.com/"
+            ]
+        },
         "5": {
             "data_quality": "Needs Vote",
             "id": 190408,
@@ -5079,6 +5145,166 @@
                 "http://instagram.com/explosionsinthesky",
                 "https://en.wikipedia.org/wiki/Explosions_in_the_Sky",
                 "https://explosionsinthesky.bandcamp.com/"
+            ]
+        },
+        "50": {
+            "data_quality": "Needs Vote",
+            "id": 1438945,
+            "images": [
+                {
+                    "height": 750,
+                    "resource_url": "https://i.discogs.com/9CEGtdnIaUDB0GaKY4WgrYWCTtN-OvM5b_8w6avjnc4/rs:fit/g:sm/q:90/h:750/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTU4NTY1MDM2/MC01MjE1LmpwZWc.jpeg",
+                    "type": "primary",
+                    "uri": "https://i.discogs.com/9CEGtdnIaUDB0GaKY4WgrYWCTtN-OvM5b_8w6avjnc4/rs:fit/g:sm/q:90/h:750/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTU4NTY1MDM2/MC01MjE1LmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/-xotaLSE8wXHWyACdShfOXxLl68lqtydzxQm-62uQck/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTU4NTY1MDM2/MC01MjE1LmpwZWc.jpeg",
+                    "width": 600
+                },
+                {
+                    "height": 600,
+                    "resource_url": "https://i.discogs.com/g_ZegGffM4CTpjKkEZZwjocZIDEMjSsKB4Ws3maq--4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTU4NTY1MDM1/Ni04OTA2LmpwZWc.jpeg",
+                    "type": "secondary",
+                    "uri": "https://i.discogs.com/g_ZegGffM4CTpjKkEZZwjocZIDEMjSsKB4Ws3maq--4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTU4NTY1MDM1/Ni04OTA2LmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/_ycQcelWV2Fkc5PepfaOo2ukByi_mbiAp5XpHqP9EgI/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTU4NTY1MDM1/Ni04OTA2LmpwZWc.jpeg",
+                    "width": 600
+                },
+                {
+                    "height": 600,
+                    "resource_url": "https://i.discogs.com/sGz35UQ3fCsBbNtpE0dO23cW9w7DlShisk_8i8mUCcc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTUzMTQ4NDgy/NC05Nzk3LmpwZWc.jpeg",
+                    "type": "secondary",
+                    "uri": "https://i.discogs.com/sGz35UQ3fCsBbNtpE0dO23cW9w7DlShisk_8i8mUCcc/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTUzMTQ4NDgy/NC05Nzk3LmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/5XDNxPOs-TtsakVWSGucZnDQIgdu72mrTCs-yEfGTfg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTUzMTQ4NDgy/NC05Nzk3LmpwZWc.jpeg",
+                    "width": 600
+                },
+                {
+                    "height": 400,
+                    "resource_url": "https://i.discogs.com/lI4vWYPllnYZUwyxUwk5OnggU5zcrn46HQakYzndEzY/rs:fit/g:sm/q:90/h:400/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTUwOTcxMjcw/MS05OTY4LmpwZWc.jpeg",
+                    "type": "secondary",
+                    "uri": "https://i.discogs.com/lI4vWYPllnYZUwyxUwk5OnggU5zcrn46HQakYzndEzY/rs:fit/g:sm/q:90/h:400/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTUwOTcxMjcw/MS05OTY4LmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/FmhvFsK4IoYHptPRSTuDsBkidox9AtOBPm3hMBx7hX4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTUwOTcxMjcw/MS05OTY4LmpwZWc.jpeg",
+                    "width": 600
+                },
+                {
+                    "height": 395,
+                    "resource_url": "https://i.discogs.com/xutNEfZ2ckzNmllomO3PRLo2LNdo0HQfIUiE4QKySt0/rs:fit/g:sm/q:90/h:395/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTUwOTcxMjgy/OC0yNjE0LmpwZWc.jpeg",
+                    "type": "secondary",
+                    "uri": "https://i.discogs.com/xutNEfZ2ckzNmllomO3PRLo2LNdo0HQfIUiE4QKySt0/rs:fit/g:sm/q:90/h:395/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTUwOTcxMjgy/OC0yNjE0LmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/AFr9tUzbg6gnbiT0jNUDTl8BsP6KoWTBaqiiOuQk_PM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTE0Mzg5/NDUtMTUwOTcxMjgy/OC0yNjE0LmpwZWc.jpeg",
+                    "width": 600
+                }
+            ],
+            "members": [
+                {
+                    "active": true,
+                    "id": 3909291,
+                    "name": "Yvette Young",
+                    "resource_url": "https://api.discogs.com/artists/3909291",
+                    "thumbnail_url": "https://i.discogs.com/ajgyQwq0X_frzBZQpghSAT7D1DWouM7yGVkjFMGpdYI/rs:fit/g:sm/q:40/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTM5MDky/OTEtMTU4NTY1MTE0/NC03NTkxLmpwZWc.jpeg"
+                },
+                {
+                    "active": true,
+                    "id": 6077883,
+                    "name": "David Adamiak",
+                    "resource_url": "https://api.discogs.com/artists/6077883",
+                    "thumbnail_url": "https://i.discogs.com/Itf0TXqLCsvH5y5WGodeOK1bzePpxdSDCXFjEL-n3l4/rs:fit/g:sm/q:40/h:580/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTYwNzc4/ODMtMTU4NTY1MTMz/NS0yMDQxLnBuZw.jpeg"
+                },
+                {
+                    "active": true,
+                    "id": 6077884,
+                    "name": "Keith Grimshaw (2)",
+                    "resource_url": "https://api.discogs.com/artists/6077884",
+                    "thumbnail_url": ""
+                },
+                {
+                    "active": true,
+                    "id": 6586466,
+                    "name": "Forrest Rice",
+                    "resource_url": "https://api.discogs.com/artists/6586466",
+                    "thumbnail_url": "https://i.discogs.com/G-ANBq_ZhTq90gmZUt3YOPKVR80sExKyPgnLN-IMpXY/rs:fit/g:sm/q:40/h:400/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1ODY0/NjYtMTU4NTY1MTYy/NS0zOTM4LmpwZWc.jpeg"
+                }
+            ],
+            "name": "Covet",
+            "profile": "Covet is an instrumental Math/Prog - Rock band from San Francisco, CA. The group was formed in 2014 and released their first EP in 2015.",
+            "releases_url": "https://api.discogs.com/artists/1438945/releases",
+            "resource_url": "https://api.discogs.com/artists/1438945",
+            "uri": "https://www.discogs.com/artist/1438945-Covet",
+            "urls": [
+                "https://covetband.bandcamp.com",
+                "https://www.instagram.com/covetband/",
+                "https://www.facebook.com/covetband",
+                "https://twitter.com/covettheband"
+            ]
+        },
+        "52": {
+            "data_quality": "Needs Vote",
+            "groups": [
+                {
+                    "active": true,
+                    "id": 11593292,
+                    "name": "Dios (10)",
+                    "resource_url": "https://api.discogs.com/artists/11593292",
+                    "thumbnail_url": "https://i.discogs.com/v0a3wZaf6fo_5fUXps02-moF0RzQImWhHaXALxVBcE8/rs:fit/g:sm/q:40/h:428/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTExNTkz/MjkyLTE2NTk0NjYz/NjAtOTI1OC5qcGVn.jpeg"
+                }
+            ],
+            "id": 6564468,
+            "images": [
+                {
+                    "height": 687,
+                    "resource_url": "https://i.discogs.com/sMny9papzID4ieBWuTX2pqAFOM-vOXuFntuSRtk_x0Q/rs:fit/g:sm/q:90/h:687/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkyMTE0/Ni01Mzc4LmpwZWc.jpeg",
+                    "type": "primary",
+                    "uri": "https://i.discogs.com/sMny9papzID4ieBWuTX2pqAFOM-vOXuFntuSRtk_x0Q/rs:fit/g:sm/q:90/h:687/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkyMTE0/Ni01Mzc4LmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/eM2MTO3Cy3WYx4zgwrB4Nx7uOYXg45Ud_EtFSajim_w/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkyMTE0/Ni01Mzc4LmpwZWc.jpeg",
+                    "width": 600
+                },
+                {
+                    "height": 400,
+                    "resource_url": "https://i.discogs.com/KZZIKhymzzP6ifDIY63mHeQ5LdseSDwTcCGkt1c3vz4/rs:fit/g:sm/q:90/h:400/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkyMTE0/Ni05OTgwLmpwZWc.jpeg",
+                    "type": "secondary",
+                    "uri": "https://i.discogs.com/KZZIKhymzzP6ifDIY63mHeQ5LdseSDwTcCGkt1c3vz4/rs:fit/g:sm/q:90/h:400/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkyMTE0/Ni05OTgwLmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/wFPAUqt9UQmhrAP5eTk4gkWbkVAo0cW6pEOZWaQqbzc/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkyMTE0/Ni05OTgwLmpwZWc.jpeg",
+                    "width": 600
+                },
+                {
+                    "height": 500,
+                    "resource_url": "https://i.discogs.com/L9jdRnTIDxOSJW5m40YN5GyljSii5AD_4fW2qKd_K3E/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkxNzIx/NS05OTU2LmpwZWc.jpeg",
+                    "type": "secondary",
+                    "uri": "https://i.discogs.com/L9jdRnTIDxOSJW5m40YN5GyljSii5AD_4fW2qKd_K3E/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkxNzIx/NS05OTU2LmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/jqDQM3BeBkEL7H2Xnf4BGGdeInAycrDAWzhg_GVxOIc/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkxNzIx/NS05OTU2LmpwZWc.jpeg",
+                    "width": 500
+                },
+                {
+                    "height": 320,
+                    "resource_url": "https://i.discogs.com/LYhCWo1LyrAMOxFySTTPvE5xX7uxDvOXcjf4OCKUdfU/rs:fit/g:sm/q:90/h:320/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTU2MTcyNzg5/NC05MjczLmpwZWc.jpeg",
+                    "type": "secondary",
+                    "uri": "https://i.discogs.com/LYhCWo1LyrAMOxFySTTPvE5xX7uxDvOXcjf4OCKUdfU/rs:fit/g:sm/q:90/h:320/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTU2MTcyNzg5/NC05MjczLmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/CmUbbjRsz5yh0pVw4l7pj3bhK0fwptVPcEO4AXpfc3A/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTU2MTcyNzg5/NC05MjczLmpwZWc.jpeg",
+                    "width": 600
+                },
+                {
+                    "height": 600,
+                    "resource_url": "https://i.discogs.com/FnBG5xS-aySFwuB7WSf_ghe8hZrpI0s84lj4TJfI61I/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkxNzIx/Ni05NzgwLmpwZWc.jpeg",
+                    "type": "secondary",
+                    "uri": "https://i.discogs.com/FnBG5xS-aySFwuB7WSf_ghe8hZrpI0s84lj4TJfI61I/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkxNzIx/Ni05NzgwLmpwZWc.jpeg",
+                    "uri150": "https://i.discogs.com/gcITLqQeOZvoFBVkOPb-vvD-O2z-Z4yKFcn7XOSqKI4/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTY1NjQ0/NjgtMTYyMjkxNzIx/Ni05NzgwLmpwZWc.jpeg",
+                    "width": 600
+                }
+            ],
+            "name": "Ichika (2)",
+            "namevariations": [
+                "Ichika Nito"
+            ],
+            "profile": "Japanese math-rock guitarist.\r\n\r\nAlso known as Ichika Mo, Ichika Fukui, Ichika Hukui, ichika Nito or Nito.",
+            "releases_url": "https://api.discogs.com/artists/6564468/releases",
+            "resource_url": "https://api.discogs.com/artists/6564468",
+            "uri": "https://www.discogs.com/artist/6564468-Ichika-2",
+            "urls": [
+                "https://nitomusic.bigcartel.com/",
+                "https://ichika.bandcamp.com/",
+                "https://nit0.bandcamp.com/releases",
+                "https://www.youtube.com/channel/UC4S8fq0XOYdIyKXDfnf1qfw",
+                "https://www.youtube.com/channel/UCq3Wpi10SyZkzVeS7vzB5Lw",
+                "https://www.instagram.com/ichika_mo/",
+                "https://twitter.com/ichika_mo",
+                "https://www.facebook.com/Ichika-1809521959312100/"
             ]
         },
         "6": {

@@ -28,6 +28,17 @@ class CRUD:
             return self.db.search(q == value)
         return self.table.search(q == value)
 
+    def insert(self, data: dict):
+        if not self.table:
+            return self.db.upsert(data)
+        return self.table.insert(data)
+
+    def add(self, key: str, value: str):
+        q = getattr(self.query, key)
+        if not self.table:
+            return self.db.insert({key: value})
+        return self.table.insert({key: value})
+
     def search(self, key: str, value: str):
         q = getattr(self.query, key)
         if not self.table:

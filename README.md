@@ -1,10 +1,5 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=300px height=300px src="https://github.com/tataraba/simplesite/blob/main/assets/simple-site-demo.gif" alt="Project logo"></a>
-</p>
-
-<h2 align="center">Simple Site</h2>
-<h3 align="center">Featuring htmx and TailwindCSS</h3>
+<h1 align="center">Simple Site</h1>
+<h2 align="center">Featuring htmx and TailwindCSS</h2>
 
 <div align="center">
 
@@ -19,6 +14,10 @@
 
 <p align="center"> Create a Python-backed frontend with FastAPI, htmx, and TailwindCSS. Build it from scratch and follow the guide. Alternatively, clone the repo/use the template, or better yet, spin up a Codespace and start right away!
     <br>
+</p>
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=300px height=300px src="https://github.com/tataraba/simplesite/blob/main/assets/simple-site-demo.gif" alt="Project logo"></a>
 </p>
 
 ## 📝 Table of Contents

@@ -75,7 +75,7 @@ def catalog(request: Request):
     if request.headers.get("hx-request"):
         id = request.headers.get("HX-Trigger")
         artist = db.find("id", int(id))
-        print(artist)
+
         return templates.TemplateResponse(
             "artist/profile.html",
             {
@@ -130,16 +130,15 @@ def search(request: Request):
 @router.post("/search")
 def search_post(request: Request, search: Annotated[str, Form()]):
 
-    print(search)
     block_name = None
     if request.headers.get("hx-request"):
         block_name = "artist_card"
 
     db = CRUD().with_table("artist_details")
-    # block_name = "artist_card"
+
     results=[]
     artists = db.search(key="name", value=search)
-    print(artists)
+
     def get_members(artist: dict):
         """This returns active members from the artist_details table. This
         method can be used within the Jinja template."""

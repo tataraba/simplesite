@@ -34,7 +34,7 @@ class CRUD:
         return self.table.insert(data)
 
     def add(self, key: str, value: str):
-        q = getattr(self.query, key)
+        getattr(self.query, key)
         if not self.table:
             return self.db.insert({key: value})
         return self.table.insert({key: value})
@@ -68,8 +68,7 @@ class CRUD:
 
 
 if __name__ == "__main__":
-    path = str(settings.DATA_DIR / "_data.json")
 
     db = CRUD().with_table("artist_details")
 
-    print(db.search("name", "juliana"))
+    print(db.get_random_item())

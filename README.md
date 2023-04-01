@@ -1,7 +1,7 @@
-<!-- <p align="center">
+<p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
-</p> -->
+ <img width=300px height=300px src="https://github.com/tataraba/simplesite/blob/main/assets/simple-site-demo.gif" alt="Project logo"></a>
+</p>
 
 <h2 align="center">Simple Site</h2>
 <h3 align="center">Featuring htmx and TailwindCSS</h3>

@@ -1,12 +1,13 @@
 {
 "name": "FastAPI Demo Container",
 "build": {
-    "dockerfile": "Dockerfile",
+    "dockerfile": "../Dockerfile",
     "args": {
         "IMAGE": "python:3.11",
         "context": ".."
     }
 },
+"forwardPorts": [8000],
 "customizations": {
     "vscode": {
         "extensions": [
@@ -16,5 +17,5 @@
         ]
     }
 },
-"postCreateCommand": "pip install -r app/requirements.txt"
+"postCreateCommand": "pip install -r requirements.txt"
 }

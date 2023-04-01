@@ -3,7 +3,6 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
 
 
 from app.config import Settings
@@ -44,7 +43,6 @@ def get_app() -> FastAPI:
 
 
 app = get_app()
-app.add_middleware(HTTPSRedirectMiddleware)
 
 
 if __name__ == "__main__":

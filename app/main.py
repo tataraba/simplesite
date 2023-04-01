@@ -3,6 +3,8 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.httpsredirect import HTTPSRedirectMiddleware
+
 
 from app.config import Settings
 from app.routes import router
@@ -34,7 +36,7 @@ def get_app() -> FastAPI:
 
     app = FastAPI(lifespan=lifespan, **settings.fastapi_kwargs)
 
-    app.mount("/src/static", StaticFiles(directory=settings.STATIC_DIR), name="static")
+    app.mount("/static", StaticFiles(directory=settings.STATIC_DIR), name="static")
 
     app.include_router(router)
 
@@ -42,6 +44,7 @@ def get_app() -> FastAPI:
 
 
 app = get_app()
+app.add_middleware(HTTPSRedirectMiddleware)
 
 
 if __name__ == "__main__":

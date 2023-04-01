@@ -17,7 +17,7 @@
 </p>
 <p align="center">
   <a href="" rel="noopener">
- <img width=300px height=300px src="https://github.com/tataraba/simplesite/blob/main/assets/simple-site-demo.gif" alt="Project logo"></a>
+ <img width=400px height=400px src="https://github.com/tataraba/simplesite/blob/main/assets/simple-site-demo.gif" alt="Project logo"></a>
 </p>
 
 ## 📝 Table of Contents

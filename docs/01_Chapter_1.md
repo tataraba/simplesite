@@ -125,8 +125,8 @@ Add this line within the `<head>` element in `_base.html`:
 ```
 The `url_for()` method looks for a static directory called `static` which has already been registered with the FastAPI application, and follows the directory path starting from where it was defined in `main.py`.
 
-> **Info**
-> *Note: Sometimes, containers may be a little finicky with the way they treat mounted static files. In these cases, you may want to hard code the path to your static files instead [this is what is done in this repo to ensure compatibility with some of the containerization options].
+> **Note**
+> *Sometimes, containers may be a little finicky with the way they treat mounted static files. In these cases, you may want to hard code the path to your static files instead [this is what is done in this repo to ensure compatibility with some of the containerization options].
 >
 > The stylesheet element above would be written like this: `<link rel="stylesheet" href="/static/css/main.css') }}" type="text/css" />`
 >

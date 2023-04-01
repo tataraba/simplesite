@@ -11,8 +11,8 @@ class Settings(BaseSettings):
 
     APP_DIR: Path = APP_DIR
 
-    STATIC_DIR: Path = APP_DIR / 'static'
-    TEMPLATE_DIR: Path = APP_DIR / 'templates'
+    STATIC_DIR: Path = APP_DIR / "static"
+    TEMPLATE_DIR: Path = APP_DIR / "templates"
 
     FASTAPI_PROPERTIES = {
         "title": "Simple Site",

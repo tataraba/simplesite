@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,python
 
+az_config.sh
+build.sh
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -172,12 +175,12 @@ poetry.toml
 .ruff_cache/
 
 ### VisualStudioCode ###
-.vscode/*
+# .vscode/*
 .vscode/settings.json
-.vscode/tasks.json
-.vscode/launch.json
-.vscode/extensions.json
-.vscode/*.code-snippets
+# .vscode/tasks.json
+# .vscode/launch.json
+# .vscode/extensions.json
+# .vscode/*.code-snippets
 
 # Local History for Visual Studio Code
 .history/
@@ -221,3 +224,4 @@ $RECYCLE.BIN/
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
 _data.json
+.DS_Store

@@ -61,4 +61,4 @@ if __name__ == "__main__":
 
     db = CRUD().with_table("artist_details")
 
-    print(db.search("name", "juliana"))
+    print(db.get_random_item())

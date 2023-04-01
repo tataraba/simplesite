@@ -117,13 +117,20 @@ Again, change the "path/to/static" to match your app structure.
 
 ### Back to Templates
 
-Lastly, let's include the CSS file in the `_base.html` template. Since it is now mounted to your app, Jinja can access it with a special method (`url_for()`).
+Lastly, let's include the CSS file in the `_base.html` template. Since it is now mounted to your app, Jinja can access it with a special method (`url_for()`)*.
 
 Add this line within the `<head>` element in `_base.html`:
 ```
 <link rel="stylesheet" href="{{ url_for('static', path='css/main.css') }}" type="text/css" />
 ```
 The `url_for()` method looks for a static directory called `static` which has already been registered with the FastAPI application, and follows the directory path starting from where it was defined in `main.py`.
+
+> **Info**
+> *Note: Sometimes, containers may be a little finicky with the way they treat mounted static files. In these cases, you may want to hard code the path to your static files instead [this is what is done in this repo to ensure compatibility with some of the containerization options].
+>
+> The stylesheet element above would be written like this: `<link rel="stylesheet" href="/static/css/main.css') }}" type="text/css" />`
+>
+> Since the "static" directory is mounted by your app (and appended to your root url path), this should still work within your application.
 
 Lastly, in the `templates` directory, create a `main.html` file. This is where you can harness the real power of Jinja templates. In this file, write the following:
 

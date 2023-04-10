@@ -107,7 +107,7 @@ Open the `main.html` file in your `templates` directory. Create a `<div>` or `<s
 {% extends "/shared/_base.html" %}
 
 {% block content %}
-  <div class="bg-slate-50 max-w-screen-lg >
+  <div class="bg-slate-50 max-w-screen-lg">
     <h1 class="text-3xl font-bold uppercase">Simple Site</h1>
     <p>This is just a simple site for you</p>
   </div>

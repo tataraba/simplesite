@@ -3,7 +3,7 @@ from typing import Any
 
 from fastapi.responses import HTMLResponse
 from pydantic_settings import BaseSettings
-from typing import Dict, Any
+from typing import Any
 
 APP_DIR = Path(__file__).resolve().parent
 
@@ -15,7 +15,7 @@ class Settings(BaseSettings):
     STATIC_DIR: Path = APP_DIR / 'static'
     TEMPLATE_DIR: Path = APP_DIR / 'templates'
 
-    FASTAPI_PROPERTIES: Dict[str, Any] = {
+    FASTAPI_PROPERTIES: dict[str, Any] = {
         "title": "Simple Site",
         "description": "A simple htmx and tailwind site built with FastAPI",
         "version": "0.0.1",

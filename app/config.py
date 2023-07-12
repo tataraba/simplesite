@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Any
 
 from fastapi.responses import HTMLResponse
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 from typing import Dict, Any
 
 APP_DIR = Path(__file__).resolve().parent
